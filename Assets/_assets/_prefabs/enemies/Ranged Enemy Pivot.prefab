@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8666749358625881599}
-  - component: {fileID: 509947395798930216}
+  - component: {fileID: 3117216030784741856}
   - component: {fileID: 3414308657214872884}
   - component: {fileID: 5787061787829583226}
   m_Layer: 3
@@ -121,7 +121,7 @@ Transform:
   - {fileID: 2124718266124849337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &509947395798930216
+--- !u!114 &3117216030784741856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,11 +130,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6605181642088241732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60ad633a2c4db2f49b0424a9b9f59510, type: 3}
+  m_Script: {fileID: 11500000, guid: 0683ae688e4188d4ba298f41b152743b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 4
+  enemyHp: 1
+  projectilePrefab: {fileID: 0}
+  shootInterval: 2
+  shootRange: 8
+  speed: 0
 --- !u!135 &3414308657214872884
 SphereCollider:
   m_ObjectHideFlags: 0

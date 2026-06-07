@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -5,8 +6,12 @@ public class EnemyToPlayer : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] float speed;
-    
-    // Update is called once per frame
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void Update()
     {
         transform.LookAt(player);
