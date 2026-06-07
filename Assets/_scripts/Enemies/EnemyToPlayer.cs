@@ -10,6 +10,7 @@ public class EnemyToPlayer : MonoBehaviour
     void Update()
     {
         transform.LookAt(player);
-        transform.DOLocalMove(player.position, speed);
+       // transform.DOLocalMove(player.position, speed);
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 }
