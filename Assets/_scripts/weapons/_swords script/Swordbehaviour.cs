@@ -22,7 +22,12 @@ public class Swordbehaviour : SerializedMonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            EnemyAttackBehaviour enemyHp = other.gameObject.GetComponent<EnemyAttackBehaviour>();
+            enemyHp.enemyHp -= 1;
+            if (enemyHp.enemyHp == 0)
+            {
+                Destroy(other.gameObject);
+            }
             Debug.Log("new hit");
         }
     }
