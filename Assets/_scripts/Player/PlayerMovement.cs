@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Sirenix.OdinInspector;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : SerializedMonoBehaviour
 {
     [Title("Stats")]
     public float MovesSpeed;
@@ -14,13 +14,13 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        moveAction = InputSystem.actions.FindAction("Move");
+        moveAction = InputSystem.actions.FindAction("walking");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Vector2 moveValue = moveAction.ReadValue<Vector2>();
-        rb.AddForce(moveValue * MovesSpeed);
+        Vector3 moveValue = moveAction.ReadValue<Vector3>();
+        rb.linearVelocity = new Vector3(moveValue.x, 0, moveValue.z) * MovesSpeed;
     }
 }
