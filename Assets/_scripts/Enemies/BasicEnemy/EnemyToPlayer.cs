@@ -9,7 +9,7 @@ public class EnemyToPlayer : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Lure").transform;
     }
 
     void Update()

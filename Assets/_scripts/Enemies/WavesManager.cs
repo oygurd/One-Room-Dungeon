@@ -8,7 +8,7 @@ public class WavesManager : MonoBehaviour
     public float timeBetweenWaves = 5;
 
     [Header("Enemies")] public GameObject basicEnemyPrefab;
-
+    public GameObject RangedEnemyPrefab;
 
     [Header("Spawn points")] public Transform[] spawnPoints;
 
@@ -27,6 +27,7 @@ public class WavesManager : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenWaves);
         currentWave++;
         waveInProgress = true;
+        SpawnWave();
     }
 
     public void SpawnWave()
@@ -37,7 +38,7 @@ public class WavesManager : MonoBehaviour
         foreach (GameObject enemyprefab in enemiesToSpawn)
         {
             Transform spawnpoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(basicEnemyPrefab, spawnpoint.position, Quaternion.identity);
+            Instantiate(basicEnemyPrefab, spawnpoint.position, Quaternion.Euler(0,0,0));
             enemiesAlive++;
         }
     }
@@ -49,12 +50,12 @@ public class WavesManager : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            if (currentWave >= 3 && Random.value < 0.2f)
+            if (currentWave >= 2 && Random.value < 0.3f)
+                list.Add(RangedEnemyPrefab);
+            else
                 list.Add(basicEnemyPrefab);
         }
 
         return list;
     }
 }
-
-

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3811056140031121250}
   m_Layer: 0
   m_Name: Enemies lure
-  m_TagString: Untagged
+  m_TagString: Lure
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -509,6 +509,7 @@ MonoBehaviour:
   currentWave: 0
   timeBetweenWaves: 5
   basicEnemyPrefab: {fileID: 4749529375282276443, guid: 7739d2391c9000d4cadb9e1be440e093, type: 3}
+  RangedEnemyPrefab: {fileID: 0}
   spawnPoints:
   - {fileID: 5245074022911225484}
   - {fileID: 8687873460210529201}
@@ -587,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7054002439080702913}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
