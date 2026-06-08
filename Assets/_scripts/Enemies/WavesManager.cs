@@ -5,14 +5,15 @@ using System.Collections.Generic;
 public class WavesManager : MonoBehaviour
 {
     [Header("Wave Settings")] public int currentWave;
-    public float timeBetweenWaves = 5;
+    public float timeBetweenWaves;
 
-    [Header("Enemies")] public GameObject basicEnemyPrefab;
+    [Header("Enemies")] 
+    public GameObject basicEnemyPrefab;
     public GameObject RangedEnemyPrefab;
-
+    public List<GameObject> livingEnemies = new List<GameObject>();
     [Header("Spawn points")] public Transform[] spawnPoints;
 
-    private int enemiesAlive = 0;
+    [SerializeField] public int enemiesAlive = 0;
     private bool waveInProgress = false;
 
 
@@ -33,14 +34,18 @@ public class WavesManager : MonoBehaviour
     public void SpawnWave()
     {
         waveInProgress = true;
+        livingEnemies.Clear();
         List<GameObject> enemiesToSpawn = GetWaveComposition();
 
         foreach (GameObject enemyprefab in enemiesToSpawn)
         {
             Transform spawnpoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(basicEnemyPrefab, spawnpoint.position, Quaternion.Euler(0,0,0));
+            GameObject spawnedEnemy = Instantiate(enemyprefab, spawnpoint.position, Quaternion.Euler(0, 0, 0));
+            livingEnemies.Add(spawnedEnemy);
             enemiesAlive++;
         }
+        StartCoroutine(StartNextWave());
+
     }
 
     List<GameObject> GetWaveComposition()
@@ -57,5 +62,18 @@ public class WavesManager : MonoBehaviour
         }
 
         return list;
+    }
+
+    
+    public void OnEnemyDied()
+    {
+        enemiesAlive--;
+        livingEnemies.RemoveAt(livingEnemies.Count - 1);
+
+        if (enemiesAlive <= 0 && waveInProgress)
+        {
+            waveInProgress = false;
+            StartCoroutine(StartNextWave());
+        }
     }
 }
