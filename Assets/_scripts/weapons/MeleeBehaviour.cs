@@ -1,18 +1,16 @@
-using System;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class Swordbehaviour : SerializedMonoBehaviour
+public class MeleeBehaviour : MonoBehaviour
 {
     public Transform player;
 
-    private MeleeScriptableObject meleeScriptableObject;
+    public MeleeScriptableObject meleeScriptableObject;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        meleeScriptableObject = GetComponent<MeleeScriptableObject>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
     }
 
     // Update is called once per frame

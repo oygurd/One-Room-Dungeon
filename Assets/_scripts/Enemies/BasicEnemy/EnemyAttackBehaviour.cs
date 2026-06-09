@@ -9,21 +9,24 @@ public class EnemyAttackBehaviour : MonoBehaviour
 
     Transform wavesManager;
 
-    public void die()
+    /*public void Die()
     {
         wavesManager = GameObject.FindGameObjectWithTag("wavesManager").transform;
         WavesManager wavesmanager = wavesManager.GetComponent<WavesManager>();
         wavesmanager.livingEnemies.RemoveAt(wavesmanager.livingEnemies.Count - 1);
         wavesmanager.enemiesAlive--;
-    }
+    }*/
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            die();
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            playerHealth.LowerHp();
+            // Die();
+            if (collision.TryGetComponent(out PlayerHealth playerHealth))
+            {
+                playerHealth.LowerHp(); // lower PLAYER hp
+            }
+
             enemyHp -= 1;
             if (enemyHp == 0)
             {

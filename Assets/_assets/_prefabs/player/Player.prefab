@@ -510,6 +510,7 @@ MonoBehaviour:
   timeBetweenWaves: 5
   basicEnemyPrefab: {fileID: 4749529375282276443, guid: 7739d2391c9000d4cadb9e1be440e093, type: 3}
   RangedEnemyPrefab: {fileID: 0}
+  livingEnemies: []
   spawnPoints:
   - {fileID: 5245074022911225484}
   - {fileID: 8687873460210529201}
@@ -524,6 +525,7 @@ MonoBehaviour:
   - {fileID: 7780463588190580626}
   - {fileID: 8337679725035690771}
   - {fileID: 1335131395609343406}
+  enemiesAlive: 0
 --- !u!1 &6274879189198631951
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5340574972001410942}
+  - component: {fileID: 690922426129201417}
   - component: {fileID: 8183439031140758904}
   - component: {fileID: 5352766691528665450}
   - component: {fileID: 7251853350258583082}
@@ -571,7 +574,6 @@ GameObject:
   - component: {fileID: 1024990252228401711}
   - component: {fileID: 2066039920017514891}
   - component: {fileID: 2409059585787992653}
-  - component: {fileID: 690922426129201417}
   - component: {fileID: 7270248128182387716}
   m_Layer: 0
   m_Name: Player
@@ -598,6 +600,19 @@ Transform:
   - {fileID: 3913720357788521457}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690922426129201417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7054002439080702913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5013ae80bc02259418eb3ee3f976b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 20
 --- !u!114 &8183439031140758904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,19 +862,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   animationTime: 0
---- !u!114 &690922426129201417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7054002439080702913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5013ae80bc02259418eb3ee3f976b4e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 100
 --- !u!54 &7270248128182387716
 Rigidbody:
   m_ObjectHideFlags: 0
