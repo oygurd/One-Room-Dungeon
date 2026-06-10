@@ -11,23 +11,24 @@ public class PowerUpManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        StartCoroutine(SpawnPowerUpsDelay());
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnPowerUp()
     {
-    }
+      
+            Transform spawnpointRandom = PowerUpsSpawnPoints[Random.Range(0, PowerUpsSpawnPoints.Length)];
+            Instantiate(PowerUpPrefab[Random.Range(0, PowerUpPrefab.Length)], spawnpointRandom.position, Quaternion.identity);
 
-    
+            StartCoroutine(SpawnPowerUpsDelay());
+
+    }
 
     IEnumerator SpawnPowerUpsDelay()
     {
-        foreach (Transform spawnPoint in PowerUpsSpawnPoints)
-        {
-            Transform spawnpointRandom = PowerUpsSpawnPoints[Random.Range(0, PowerUpsSpawnPoints.Length)];
-            Instantiate(PowerUpPrefab[Random.Range(0, PowerUpPrefab.Length)], spawnPoint.position, Quaternion.identity);
-        }
-
+        
         yield return new WaitForSeconds(10);
+        SpawnPowerUp();
+        
     }
 }

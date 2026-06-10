@@ -2182,6 +2182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1798876991}
+  - component: {fileID: 1798876992}
   m_Layer: 0
   m_Name: Power Ups Manager
   m_TagString: Untagged
@@ -2198,7 +2199,7 @@ Transform:
   m_GameObject: {fileID: 1798876990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18538783, y: 2.219417, z: -1.6202153}
+  m_LocalPosition: {x: -0.18538783, y: 1.31, z: -1.6202153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2223,6 +2224,40 @@ Transform:
   - {fileID: 1972648880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1798876992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798876990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23348a909e37f8444ba787e459f83d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUpsSpawnPoints:
+  - {fileID: 1047352848}
+  - {fileID: 506817786}
+  - {fileID: 1011048878}
+  - {fileID: 132304815}
+  - {fileID: 984832354}
+  - {fileID: 77909507}
+  - {fileID: 1492937932}
+  - {fileID: 595840501}
+  - {fileID: 1696294490}
+  - {fileID: 590341484}
+  - {fileID: 554385919}
+  - {fileID: 1817530728}
+  - {fileID: 500917539}
+  - {fileID: 982980147}
+  - {fileID: 1915221646}
+  - {fileID: 649787575}
+  - {fileID: 148236238}
+  - {fileID: 932179710}
+  - {fileID: 1972648880}
+  PowerUpPrefab:
+  - {fileID: 8257065599191279221, guid: f68cbf09a0d478b4cabc9c7bb7888e64, type: 3}
 --- !u!1 &1817530727
 GameObject:
   m_ObjectHideFlags: 0

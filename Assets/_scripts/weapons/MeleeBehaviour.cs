@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MeleeBehaviour : MonoBehaviour
@@ -10,6 +11,11 @@ public class MeleeBehaviour : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (meleeScriptableObject.timeBased)
+        {
+            StartCoroutine(StartCountDown());
+        }
 
     }
 
@@ -31,5 +37,11 @@ public class MeleeBehaviour : MonoBehaviour
             }
             Debug.Log("new hit");
         }
+    }
+
+    IEnumerator StartCountDown()
+    {
+        yield return new WaitForSeconds(meleeScriptableObject.time);
+        Destroy(gameObject);
     }
 }

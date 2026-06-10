@@ -11,7 +11,9 @@ public class MeleeScriptableObject : ScriptableObject
     public int damage;
     public float knockback;
 
-
-
+    [Header("Conditions")]
+    public bool timeBased;
+    public float time;
+    
 
 }
