@@ -9,13 +9,11 @@ public class EnemyAttackBehaviour : MonoBehaviour
 
     Transform wavesManager;
 
-    /*public void Die()
+
+    private void OnDestroy()
     {
-        wavesManager = GameObject.FindGameObjectWithTag("wavesManager").transform;
-        WavesManager wavesmanager = wavesManager.GetComponent<WavesManager>();
-        wavesmanager.livingEnemies.RemoveAt(wavesmanager.livingEnemies.Count - 1);
-        wavesmanager.enemiesAlive--;
-    }*/
+        WavesManager.Instance.OnEnemyDied(gameObject);
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -30,7 +28,9 @@ public class EnemyAttackBehaviour : MonoBehaviour
             enemyHp -= 1;
             if (enemyHp == 0)
             {
+                WavesManager.Instance.OnEnemyDied(gameObject);
                 Destroy(gameObject);
+                
             }
         }
     }

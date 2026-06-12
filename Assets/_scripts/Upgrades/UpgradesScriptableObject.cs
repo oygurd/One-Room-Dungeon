@@ -13,4 +13,8 @@ public class UpgradesScriptableObject : ScriptableObject
     public int healthBonus;
     public int speedBonus;
     
+    [Header("Specials")]
+    public bool isSpecial;
+    public string specialName;
+    
 }

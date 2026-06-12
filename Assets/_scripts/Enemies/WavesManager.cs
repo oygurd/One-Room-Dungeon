@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class WavesManager : MonoBehaviour
 {
+    public static WavesManager Instance { get; private set; }
     [Header("Wave Settings")] public int currentWave;
     public float timeBetweenWaves;
 
-    [Header("Enemies")] 
-    public GameObject basicEnemyPrefab;
+    [Header("Enemies")] public GameObject basicEnemyPrefab;
     public GameObject RangedEnemyPrefab;
     public List<GameObject> livingEnemies = new List<GameObject>();
     [Header("Spawn points")] public Transform[] spawnPoints;
@@ -17,13 +19,18 @@ public class WavesManager : MonoBehaviour
     private bool waveInProgress = false;
 
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(StartNextWave());
     }
 
-    IEnumerator StartNextWave()
+    public IEnumerator StartNextWave()
     {
         yield return new WaitForSeconds(timeBetweenWaves);
         currentWave++;
@@ -44,8 +51,8 @@ public class WavesManager : MonoBehaviour
             livingEnemies.Add(spawnedEnemy);
             enemiesAlive++;
         }
-        StartCoroutine(StartNextWave());
 
+       // StartCoroutine(StartNextWave());
     }
 
     List<GameObject> GetWaveComposition()
@@ -64,11 +71,11 @@ public class WavesManager : MonoBehaviour
         return list;
     }
 
-    
-    public void OnEnemyDied()
+
+    public void OnEnemyDied(GameObject enemy)
     {
-        enemiesAlive--;
-        livingEnemies.RemoveAt(livingEnemies.Count - 1);
+        enemiesAlive -= 1;
+        livingEnemies.Remove(enemy);
 
         if (enemiesAlive <= 0 && waveInProgress)
         {
