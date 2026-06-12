@@ -80,7 +80,8 @@ public class WavesManager : MonoBehaviour
         if (enemiesAlive <= 0 && waveInProgress)
         {
             waveInProgress = false;
-            StartCoroutine(StartNextWave());
+            //tartCoroutine(StartNextWave());
+            UpgradesManager.instance.ShowUpgradeScreen();
         }
     }
 }

@@ -54,13 +54,14 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     public void SelectUpgrade(UpgradesScriptableObject upgrade)
     {
-        applyupgrade(upgrade);
+        Applyupgrade(upgrade);
         HideUpgradeScreen();
-        WavesManager.Instance.SpawnWave();
+        WavesManager.Instance.StartCoroutine(WavesManager.Instance.StartNextWave());
     }
 
-    public void applyupgrade(UpgradesScriptableObject upgrade)
+    public void Applyupgrade(UpgradesScriptableObject upgrade)
     {
+        upgrade = allUpgrades[Random.Range(0, allUpgrades.Length)];
         PlayerHealth playerHealth = FindFirstObjectByType<PlayerHealth>();
         PlayerMovement playerMovement = FindFirstObjectByType<PlayerMovement>();
         MeleeBehaviour meleeBehaviour = FindFirstObjectByType<MeleeBehaviour>();

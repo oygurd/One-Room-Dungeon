@@ -1303,10 +1303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb3706fcc8d9fb4faf27d4231654813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  nameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  selectButton: {fileID: 0}
+  icon: {fileID: 913667671}
+  nameText: {fileID: 1909612011}
+  descriptionText: {fileID: 1909612011}
+  selectButton: {fileID: 913667670}
 --- !u!114 &913667670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1845,7 +1845,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1195889774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1195889774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,10 +1908,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb3706fcc8d9fb4faf27d4231654813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  nameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  selectButton: {fileID: 0}
+  icon: {fileID: 1195889774}
+  nameText: {fileID: 1367776261}
+  descriptionText: {fileID: 1367776261}
+  selectButton: {fileID: 1195889773}
 --- !u!1 &1209679178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,7 +1928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1209679179
 Transform:
   m_ObjectHideFlags: 0
@@ -1954,10 +1966,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  allUpgrades: []
+  allUpgrades:
+  - {fileID: 11400000, guid: 412ff6da4856c434f8c6ae3193c99b84, type: 2}
+  - {fileID: 11400000, guid: 4e453137a79579b4886eb509f3ce5f4d, type: 2}
+  - {fileID: 11400000, guid: 8308a24a476dfda408254c628153ba9f, type: 2}
   upgradeScreenUI: {fileID: 2004936178}
   upgradeCards:
-  - {fileID: 0}
   - {fileID: 1643578830}
   - {fileID: 913667669}
   - {fileID: 1195889776}
@@ -2843,10 +2857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb3706fcc8d9fb4faf27d4231654813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  nameText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  selectButton: {fileID: 0}
+  icon: {fileID: 1643578832}
+  nameText: {fileID: 1814759143}
+  descriptionText: {fileID: 1814759143}
+  selectButton: {fileID: 1643578831}
 --- !u!114 &1643578831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3427,7 +3441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2004936179
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3597,63 +3611,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0.048, y: 0.163, z: -0.031}
---- !u!1001 &4154199336178040899
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953768802905269271, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5212587533990740792, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
-      propertyPath: m_Name
-      value: Scythe Pivot
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f13cd283f2b48d44098715c022fbb1d4, type: 3}
 --- !u!1001 &4711265394567089600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3871,7 +3828,6 @@ SceneRoots:
   - {fileID: 5064846203147772359}
   - {fileID: 1625867007}
   - {fileID: 4711265394567089600}
-  - {fileID: 4154199336178040899}
   - {fileID: 1798876991}
   - {fileID: 1209679179}
   - {fileID: 891515608}
