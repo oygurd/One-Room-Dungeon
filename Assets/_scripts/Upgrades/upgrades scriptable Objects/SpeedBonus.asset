@@ -12,11 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd258f04f4ac4a47884de92350f2422, type: 3}
   m_Name: SpeedBonus
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   upgradeName: Extra Base Speed
-  upgradeDescription: Increase yuor base speed stat
-  upgradeIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  upgradeDescription: Increase your base speed stat
+  upgradeIcon: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 2
   isSpecial: 0
-  specialName: 
+  specialItem: {fileID: 0}

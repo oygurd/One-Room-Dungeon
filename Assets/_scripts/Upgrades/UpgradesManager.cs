@@ -72,6 +72,11 @@ public class UpgradesManager : SerializedMonoBehaviour
             playerMovement.MoveSpeed += (int)upgrade.speedBonus;
         if(upgrade.damageBonus != 0)
             meleeBehaviour.damage += (int)upgrade.damageBonus;
+
         
+        if (upgrade.isSpecial)
+        {
+            
+        }
     }
 }

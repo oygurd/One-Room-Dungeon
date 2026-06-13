@@ -8,6 +8,9 @@ public class UpgradeCardUI : MonoBehaviour
     public TMP_Text descriptionText;
     public Button selectButton;
     
+    public TMP_Text specialDescription;
+    public Sprite specialSprite;
+    
     private UpgradesScriptableObject currentUpgrade;
 
     public void Setup(UpgradesScriptableObject upgrade)
@@ -16,20 +19,16 @@ public class UpgradeCardUI : MonoBehaviour
         icon.sprite = upgrade.upgradeIcon;
         nameText.text = upgrade.upgradeName;
         descriptionText.text = upgrade.upgradeDescription;
+
+        if (upgrade.isSpecial) //if an upgrade is special, show its stats and icon as well
+        {
+            specialDescription.text = upgrade.specialItem.damage.ToString();
+            specialSprite = upgrade.specialItem.icon;
+        }
         
         selectButton.onClick.RemoveAllListeners();
         selectButton.onClick.AddListener(() => UpgradesManager.instance.SelectUpgrade(currentUpgrade));
     }
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

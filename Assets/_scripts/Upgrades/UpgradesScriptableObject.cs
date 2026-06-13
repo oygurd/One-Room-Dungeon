@@ -1,10 +1,12 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "UpgradesScriptableObject", menuName = "Scriptable Objects/UpgradesScriptableObject")]
-public class UpgradesScriptableObject : ScriptableObject
+public class UpgradesScriptableObject : SerializedScriptableObject
 {
     [Header("Upgrade Name")]
     public string upgradeName;
+    [TextArea(4,10)]
     public string upgradeDescription;
     public Sprite upgradeIcon;
     
@@ -15,6 +17,6 @@ public class UpgradesScriptableObject : ScriptableObject
     
     [Header("Specials")]
     public bool isSpecial;
-    public string specialName;
+    public MeleeScriptableObject specialItem; //special upgrades are weapons that can stay for the remainder of the game or for an extended duration more than normal
     
 }

@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 1
   knockback: 0
   timeBased: 1
-  time: 3
+  time: 5
