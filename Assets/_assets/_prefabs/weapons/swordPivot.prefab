@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  damage: 0
   meleeScriptableObject: {fileID: 11400000, guid: 9d467870cfa85d04387d722c5416dc8c, type: 2}
 --- !u!95 &7622441379855527779
 Animator:

@@ -17,6 +17,7 @@ public class UpgradesScriptableObject : SerializedScriptableObject
     
     [Header("Specials")]
     public bool isSpecial;
+    public GameObject specialItemPrefab;
     public MeleeScriptableObject specialItem; //special upgrades are weapons that can stay for the remainder of the game or for an extended duration more than normal
     
 }
