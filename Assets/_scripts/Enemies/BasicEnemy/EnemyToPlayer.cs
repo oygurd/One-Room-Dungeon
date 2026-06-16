@@ -7,6 +7,8 @@ public class EnemyToPlayer : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] float speed;
 
+    public bool hitByShield;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Lure").transform;
@@ -15,7 +17,12 @@ public class EnemyToPlayer : MonoBehaviour
     void Update()
     {
         transform.LookAt(player);
-       // transform.DOLocalMove(player.position, speed);
-        transform.position += transform.forward * speed * Time.deltaTime;
+        // transform.DOLocalMove(player.position, speed);
+
+        if (!hitByShield)
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
+        
     }
 }

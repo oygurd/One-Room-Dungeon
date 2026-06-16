@@ -6,9 +6,14 @@ using UnityEngine;
 public class EnemyAttackBehaviour : MonoBehaviour
 {
     public int enemyHp;
-
+    public Rigidbody enemyRb;
+    
     Transform wavesManager;
 
+    private void Start()
+    {
+        enemyRb = GetComponent<Rigidbody>();
+    }
 
     private void OnDestroy()
     {

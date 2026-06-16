@@ -194,6 +194,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 599ffcc578bbfcc4eaffc4605df9bd48, type: 3}
       insertIndex: -1
       addedObject: {fileID: 25111814}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 599ffcc578bbfcc4eaffc4605df9bd48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 25111815}
   m_SourcePrefab: {fileID: 100100000, guid: 599ffcc578bbfcc4eaffc4605df9bd48, type: 3}
 --- !u!4 &25111812 stripped
 Transform:
@@ -227,6 +230,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2124705421725058983, guid: 599ffcc578bbfcc4eaffc4605df9bd48, type: 3}
+--- !u!114 &25111815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25111813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2eea4eddedad7442bf3019601028069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  damage: 0
+  health: 0
 --- !u!1001 &67074177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -302,6 +329,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fcde706a71dcb34d902a9625f3c7515, type: 3}
       insertIndex: -1
       addedObject: {fileID: 67074180}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fcde706a71dcb34d902a9625f3c7515, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 67074181}
   m_SourcePrefab: {fileID: 100100000, guid: 8fcde706a71dcb34d902a9625f3c7515, type: 3}
 --- !u!4 &67074178 stripped
 Transform:
@@ -335,6 +365,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8314571269056883277, guid: 8fcde706a71dcb34d902a9625f3c7515, type: 3}
+--- !u!114 &67074181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67074179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2eea4eddedad7442bf3019601028069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  damage: 0
+  health: 0
 --- !u!1 &77909506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558763601}
+  - component: {fileID: 558763602}
   m_Layer: 0
   m_Name: Shield pivot
   m_TagString: Untagged
@@ -1308,6 +1363,20 @@ Transform:
   - {fileID: 25111812}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &558763602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558763600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562b39f4a5225444c954b67cf4951722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  shields: []
 --- !u!1 &561735061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1654,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a50b0c1c7887d4145b60c505a9bc6fa4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 812615280}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a50b0c1c7887d4145b60c505a9bc6fa4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 812615281}
   m_SourcePrefab: {fileID: 100100000, guid: a50b0c1c7887d4145b60c505a9bc6fa4, type: 3}
 --- !u!4 &812615278 stripped
 Transform:
@@ -1618,6 +1690,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8999911773206952699, guid: a50b0c1c7887d4145b60c505a9bc6fa4, type: 3}
+--- !u!114 &812615281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812615279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2eea4eddedad7442bf3019601028069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  damage: 0
+  health: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,7 +4007,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  showPointer: {fileID: 0}
+  showPointer: {fileID: 1625867007}
   playerRb: {fileID: 0}
 --- !u!1 &1643578828
 GameObject:
@@ -4130,6 +4226,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8e69c57dc6e7df7439663ec6c7dc99bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1648314533}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8e69c57dc6e7df7439663ec6c7dc99bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1648314534}
   m_SourcePrefab: {fileID: 100100000, guid: 8e69c57dc6e7df7439663ec6c7dc99bc, type: 3}
 --- !u!4 &1648314531 stripped
 Transform:
@@ -4163,6 +4262,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8792586484180348971, guid: 8e69c57dc6e7df7439663ec6c7dc99bc, type: 3}
+--- !u!114 &1648314534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648314532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2eea4eddedad7442bf3019601028069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  damage: 0
+  health: 0
 --- !u!1 &1696294489
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,6 +4808,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 2066039920017514891, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066039920017514891, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
       propertyPath: showPointer
       value: 
