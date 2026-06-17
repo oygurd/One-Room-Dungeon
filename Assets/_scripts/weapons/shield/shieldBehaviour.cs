@@ -19,8 +19,10 @@ public class shieldBehaviour : SerializedMonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyAttackBehaviour enemy = other.gameObject.GetComponent<EnemyAttackBehaviour>();
+            EnemyToPlayer enemyMove = other.gameObject.GetComponent<EnemyToPlayer>();
             
-            enemy.enemyRb.AddRelativeForce(-enemy.transform.forward * 20, ForceMode.Impulse);
+            enemy.enemyRb.AddForce(-enemy.transform.forward * meleeScript.knockback, ForceMode.Impulse);
+            enemyMove.hitByShield = true;
             health -= 1;
 
             if (health == 0)

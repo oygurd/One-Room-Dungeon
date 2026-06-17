@@ -26,6 +26,6 @@ MonoBehaviour:
   damage: 0
   hasHealth: 1
   health: 1
-  knockback: 0
+  knockback: 15
   timeBased: 0
   time: 0

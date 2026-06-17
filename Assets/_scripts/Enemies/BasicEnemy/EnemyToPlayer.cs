@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
@@ -23,6 +24,18 @@ public class EnemyToPlayer : MonoBehaviour
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
+
+        if (hitByShield)
+        {
+            StartCoroutine(StartCount());
+        }
         
+    }
+
+
+    IEnumerator StartCount()
+    {
+        yield return new WaitForSeconds(2);
+        hitByShield = false;
     }
 }
