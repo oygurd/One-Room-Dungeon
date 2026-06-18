@@ -254,6 +254,7 @@ MonoBehaviour:
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
   damage: 0
   health: 0
+  knockback: 0
 --- !u!1001 &67074177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,6 +390,7 @@ MonoBehaviour:
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
   damage: 0
   health: 0
+  knockback: 0
 --- !u!1 &77909506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   shields: []
+  meleeScriptForTime: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
 --- !u!1 &561735061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,6 +1717,7 @@ MonoBehaviour:
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
   damage: 0
   health: 0
+  knockback: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4290,7 @@ MonoBehaviour:
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
   damage: 0
   health: 0
+  knockback: 0
 --- !u!1 &1696294489
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,11 +7,13 @@ public class shieldBehaviour : SerializedMonoBehaviour
     
     public int damage;
     public int health;
+    public float knockback;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         damage = meleeScript.damage;
         health = meleeScript.health;
+        knockback = meleeScript.knockback;
     }
     
     private void OnTriggerEnter(Collider other)
@@ -21,7 +23,7 @@ public class shieldBehaviour : SerializedMonoBehaviour
             EnemyAttackBehaviour enemy = other.gameObject.GetComponent<EnemyAttackBehaviour>();
             EnemyToPlayer enemyMove = other.gameObject.GetComponent<EnemyToPlayer>();
             
-            enemy.enemyRb.AddForce(-enemy.transform.forward * meleeScript.knockback, ForceMode.Impulse);
+            enemy.enemyRb.AddForce(-enemy.transform.forward * knockback, ForceMode.Impulse);
             enemyMove.hitByShield = true;
             health -= 1;
 
