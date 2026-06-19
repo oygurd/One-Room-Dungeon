@@ -8,26 +8,25 @@ using UnityEngine.PlayerLoop;
 
 public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
 {
-    public List<GameObject> FindAllLaserEnemies = new List<GameObject>();
 
     public LayerMask allyLaserLayer;
     public GameObject body;
     [Title("Base settings")] public GameObject projectilePrefab;
-    public float shootInterval = 2f;
+    public float speed;
+
     public float LaserRange = 15f;
     public float LimitRnageToPlayer = 10;
     public float rangeFromPlayer;
-    public bool selectedByAnotherLaser;
-    public bool detectedAnotherLaserEnemy;
-    public float speed;
-    public bool shootingLaser;
-    public bool checkerForAllies;
 
+    public bool shootingLaser;
+
+    public bool movementStop;
     [SerializeField] Transform player;
 
     public Transform[] OtherLaserEnemies;
     public Transform selectedLaserEnemy;
-    [Required] [SerializeField] private Transform laserShooter; //assign in the inspector
+
+    [Required] [SerializeField] private GameObject laserShooter; //assign in the inspector
     private float distance;
 
     RaycastHit laserHitAlly;
@@ -46,16 +45,13 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
         Shoot();
         GotoPlayer();
 
-        checkerForAllies = Physics.Raycast(laserShooter.position, laserShooter.right, out laserHitAlly, LaserRange,
-            allyLaserLayer);
-
-        FindClosestLaserAlly();
+        
     }
 
 
     public void GotoPlayer()
     {
-        if (distance > LimitRnageToPlayer)
+        if (distance > LimitRnageToPlayer && !movementStop)
         {
             transform.LookAt(player);
             // transform.DOLocalMove(player.position, speed);
@@ -70,45 +66,5 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
             transform.LookAt(player);
         }
     }
-
-    public void FindClosestLaserAlly()
-    {
-        OtherLaserEnemies = FindObjectsByType<LaserGatingEnemyBehaviour>(FindObjectsInactive.Exclude);
-        if (!detectedAnotherLaserEnemy)
-        {
-            laserShooter.Rotate(0, 50 * Time.deltaTime, 0);
-            if (checkerForAllies)
-            {
-                detectedAnotherLaserEnemy = true;
-
-                GameObject hitObject = laserHitAlly.collider.gameObject;
-                if (hitObject.TryGetComponent(out LaserGatingEnemyBehaviour ally))
-                {
-                    if (ally.selectedByAnotherLaser) return;
-
-                    ally.selectedByAnotherLaser = true; // sets the bool ON THE HIT ENEMY
-                    FindAllLaserEnemies.Add(hitObject);
-                    detectedAnotherLaserEnemy = true;
-
-                    
-
-                }
-            }
-        }
-    }
-
-
-    private void OnDrawGizmos()
-    {
-        if (!detectedAnotherLaserEnemy)
-        {
-            Gizmos.color = Color.green;
-        }
-        else
-        {
-            Gizmos.color = Color.green;
-        }
-
-        Gizmos.DrawRay(laserShooter.position, laserShooter.right * LaserRange);
-    }
+    
 }
