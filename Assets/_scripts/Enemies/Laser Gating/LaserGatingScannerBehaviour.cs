@@ -12,7 +12,6 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     public List<GameObject> FindAllLaserEnemies = new List<GameObject>();
 
     public LayerMask allyLaserLayer;
-    public GameObject body;
     [Title("Base settings")] public GameObject projectilePrefab;
     private Collider self;
     public float shootInterval = 2f;
@@ -24,9 +23,6 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     public bool rayIsRed;
 
     public bool shootingLaser;
-
-    [SerializeField] Transform player;
-
 
     private float distance;
 
