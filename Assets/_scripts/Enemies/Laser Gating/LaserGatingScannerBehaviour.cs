@@ -20,6 +20,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     public bool selectedByAnotherLaser;
     public bool detectedAnotherLaserEnemy;
     public bool checkerForAllies;
+    
     public bool rayIsRed;
 
     public bool shootingLaser;
@@ -36,7 +37,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
 
     private void Update()
     {
-        checkerForAllies = Physics.Raycast(transform.position, transform.right,
+        checkerForAllies = Physics.Raycast(transform.position, transform.up,
             out laserHitAlly, LaserRange,
             allyLaserLayer);
 
@@ -63,6 +64,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                     ally.selectedByAnotherLaser = true; // sets the bool ON THE HIT ENEMY
                     FindAllLaserEnemies.Add(hitObject);
                     detectedAnotherLaserEnemy = true;
+                    ally.selectedByAnotherLaser = true;
                     //transform.position = new Vector3(0, 0, 0);
                     self.enabled = false;
                     rayIsRed = true;
@@ -82,6 +84,6 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
             Gizmos.color = Color.red;
         }
 
-        Gizmos.DrawRay(transform.position, transform.right * LaserRange);
+        Gizmos.DrawRay(transform.position, transform.up * LaserRange);
     }
 }

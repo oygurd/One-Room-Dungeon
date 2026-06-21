@@ -12,6 +12,7 @@ public class WavesManager : MonoBehaviour
 
     [Header("Enemies")] public GameObject basicEnemyPrefab;
     public GameObject RangedEnemyPrefab;
+    public GameObject laserGatingEnemyPrefab;
     public List<GameObject> livingEnemies = new List<GameObject>();
     [Header("Spawn points")] public Transform[] spawnPoints;
 
@@ -52,7 +53,7 @@ public class WavesManager : MonoBehaviour
             enemiesAlive++;
         }
 
-       // StartCoroutine(StartNextWave());
+        // StartCoroutine(StartNextWave());
     }
 
     List<GameObject> GetWaveComposition()
@@ -62,10 +63,12 @@ public class WavesManager : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            if (currentWave >= 2 && Random.value < 0.3f)
+            if (currentWave >= 2 && Random.value < 0.2f)
                 list.Add(RangedEnemyPrefab);
-            else
+            else if (currentWave >= 2 && Random.value < 0.3f)
                 list.Add(basicEnemyPrefab);
+            else
+                list.Add(laserGatingEnemyPrefab);
         }
 
         return list;
