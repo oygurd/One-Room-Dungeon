@@ -39,6 +39,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     RaycastHit laserHitAlly;
     RaycastCommand raycasthitAlly;
 
+    public GameObject hitObject;
     private void Start()
     {
         self = GetComponent<Collider>();
@@ -76,7 +77,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                 detectedAnotherLaserEnemy = true;
                 mainLaserGatingScript.movementStop = true;
 
-                GameObject hitObject = laserHitAlly.collider.gameObject;
+                 hitObject = laserHitAlly.collider.gameObject;
                 if (hitObject.TryGetComponent(out LaserGatingScannerBehaviour ally))
                 {
                     animController.Searching = false;
