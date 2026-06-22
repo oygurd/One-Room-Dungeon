@@ -8,14 +8,13 @@ using UnityEngine.PlayerLoop;
 
 public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
 {
-
+    public LaserGatingScannerBehaviour laserGatingScript;
     public LayerMask allyLaserLayer;
     public GameObject body;
     [Title("Base settings")] public GameObject projectilePrefab;
     public float speed;
 
-    public float LaserRange = 15f;
-    public float LimitRnageToPlayer = 10;
+    public float LimitRnageToPlayer;
     public float rangeFromPlayer;
 
     public bool shootingLaser;
@@ -23,11 +22,10 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
     public bool movementStop;
     [SerializeField] Transform player;
 
-    public Transform[] OtherLaserEnemies;
     public Transform selectedLaserEnemy;
 
     [Required] [SerializeField] private GameObject laserShooter; //assign in the inspector
-    private float distance;
+    public float distance;
 
     RaycastHit laserHitAlly;
     RaycastCommand raycasthitAlly;
@@ -42,10 +40,8 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(player.position, transform.position);
-        Shoot();
+        //Shoot();
         GotoPlayer();
-
-        
     }
 
 
@@ -56,15 +52,19 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
             transform.LookAt(player);
             // transform.DOLocalMove(player.position, speed);
             transform.position += transform.forward * speed * Time.deltaTime;
+            body.transform.right = transform.forward; //make it face the direction of the player
+        }
+        if (distance <= LimitRnageToPlayer)
+        {
+            laserGatingScript.startSearching = true;
         }
     }
 
     public void Shoot()
     {
-        if (distance <= LaserRange && !shootingLaser)
+        if (distance <= laserGatingScript.LaserRange && !shootingLaser)
         {
-            transform.LookAt(player);
+            body.transform.LookAt(player);
         }
     }
-    
 }

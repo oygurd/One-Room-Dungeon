@@ -55,21 +55,21 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  laserGatingScript: {fileID: 8318437867922517589}
   allyLaserLayer:
     serializedVersion: 2
     m_Bits: 64
-  body: {fileID: 2383426923353118926}
+  body: {fileID: 5476243145768122543}
   projectilePrefab: {fileID: 0}
   speed: 20
-  LaserRange: 15
-  LimitRnageToPlayer: 10
+  LimitRnageToPlayer: 20
   rangeFromPlayer: 0
   shootingLaser: 0
   movementStop: 0
   player: {fileID: 0}
-  OtherLaserEnemies: []
   selectedLaserEnemy: {fileID: 0}
-  laserShooter: {fileID: 2383426923353118926}
+  laserShooter: {fileID: 3713645717720017594}
+  distance: 0
 --- !u!1 &2383426923353118926
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4732252002108611160
 Transform:
   m_ObjectHideFlags: 0
@@ -371,6 +371,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 39f69323c9cbbd54c8588920fdcf70b3, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7717582636364841323}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 39f69323c9cbbd54c8588920fdcf70b3, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3705010953150946726}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 39f69323c9cbbd54c8588920fdcf70b3, type: 3}
       insertIndex: -1
@@ -443,12 +446,17 @@ MonoBehaviour:
     SerializationNodes: []
   mainLaserGatingScript: {fileID: 5710153117489656363}
   FindAllLaserEnemies: []
+  animController: {fileID: 7717582636364841323}
   allyLaserLayer:
     serializedVersion: 2
     m_Bits: 64
-  projectilePrefab: {fileID: 0}
+  mainBody: {fileID: 4662446677651448341}
   shootInterval: 2
-  LaserRange: 15
+  LaserRange: 0
+  distance: 0
+  distanceFromAlly: 0
+  minimumDistanceFromAlly: 7
+  startSearching: 0
   selectedByAnotherLaser: 0
   detectedAnotherLaserEnemy: 0
   checkerForAllies: 0
@@ -500,6 +508,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 39f69323c9cbbd54c8588920fdcf70b3, type: 3}
   m_PrefabInstance: {fileID: 5133804445949232638}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7717582636364841323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476243145768122543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ce9672db5bc0247800a0c400e94030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  isMoving: 0
+  isSearching: 0
+  isShooting: 0
 --- !u!114 &3705010953150946726
 MonoBehaviour:
   m_ObjectHideFlags: 0
