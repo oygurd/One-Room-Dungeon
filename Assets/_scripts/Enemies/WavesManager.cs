@@ -64,11 +64,11 @@ public class WavesManager : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             if (currentWave >= 2 && Random.value < 0.2f)
-                list.Add(RangedEnemyPrefab);
-            else if (currentWave >= 2 && Random.value < 0.3f)
-                list.Add(basicEnemyPrefab);
-            else
                 list.Add(laserGatingEnemyPrefab);
+            else if (currentWave >= 2 && Random.value < 0.3f)
+                list.Add(RangedEnemyPrefab);
+            else
+                list.Add(basicEnemyPrefab);
         }
 
         return list;
