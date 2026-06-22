@@ -12,6 +12,9 @@ public class PlayerMovement : SerializedMonoBehaviour
 
     private Vector3 moveValue;
 
+    public Transform wheels;
+    public Vector3 wheelsRotation;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,15 +24,17 @@ public class PlayerMovement : SerializedMonoBehaviour
 
     private void Update()
     {
-        moveValue = moveAction.ReadValue<Vector3>();
+        moveValue = moveAction.ReadValue<Vector3>().normalized;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //  Vector3 moveValue = moveAction.ReadValue<Vector3>();
-        //Vector3 move = new Vector3(moveValue.x, 0f, moveValue.z).normalized;
-
+       
         rb.AddForce(moveValue * MoveSpeed, ForceMode.Force);
+
+
+        wheelsRotation += moveValue;
+       // wheels.transform.rotation = Quaternion.Lerp(transform.rotation, wheelsRotation, 0.1f);
     }
 }

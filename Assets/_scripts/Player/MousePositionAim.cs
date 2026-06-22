@@ -25,11 +25,11 @@ public class MousePositionAim : SerializedMonoBehaviour
             Vector3 mousepos = ray.GetPoint(distance);
             
             Vector3 direction = mousepos - transform.position;
-            direction.y = 0;
+            direction.y = -90;
 
             if (direction != Vector3.zero)
             {
-                transform.rotation = Quaternion.LookRotation(direction) * quaternion.Euler(0,55,0);
+                transform.rotation = Quaternion.LookRotation(direction ) * quaternion.Euler(0,55,0);
             }
             showPointer.position = ray.GetPoint(distance);
         }
