@@ -14,7 +14,8 @@ public class PlayerMovement : SerializedMonoBehaviour
 
     public Transform wheels;
     public Vector3 wheelsRotation;
-    
+    public float wheelRotationSpeed = 90f;
+    private float currentWheelRotation = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,17 +25,22 @@ public class PlayerMovement : SerializedMonoBehaviour
 
     private void Update()
     {
-        moveValue = moveAction.ReadValue<Vector3>().normalized;
+        moveValue = moveAction.ReadValue<Vector3>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-       
         rb.AddForce(moveValue * MoveSpeed, ForceMode.Force);
 
+        if (moveAction.IsPressed())
+        {
+            wheelsRotation = new Vector3(moveValue.x, 0, moveValue.z);
+            // smoothly lerp wheels to that angle
+            Quaternion targetRotation = Quaternion.LookRotation(wheelsRotation);
+            wheels.rotation = Quaternion.Lerp(wheels.rotation,targetRotation, 0.2f);
+        }
 
-        wheelsRotation += moveValue;
-       // wheels.transform.rotation = Quaternion.Lerp(transform.rotation, wheelsRotation, 0.1f);
+        // wheels.transform.rotation = Quaternion.Lerp(transform.rotation, wheelsRotation, 0.1f);
     }
 }
