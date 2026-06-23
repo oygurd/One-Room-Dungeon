@@ -13,6 +13,8 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     public List<GameObject> FindAllLaserEnemies = new List<GameObject>();
     public LaserGatingEnemyAnimController animController;
 
+    public GameObject laser;
+    
     public LayerMask allyLaserLayer;
     [Title("Base settings")] private Collider self;
 
@@ -95,6 +97,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                     allybody.movementStop = true;
                     rayIsRed = true;
                     distanceFromAlly = laserHitAlly.distance;
+                    laser.SetActive(true);
                 }
             }
         }

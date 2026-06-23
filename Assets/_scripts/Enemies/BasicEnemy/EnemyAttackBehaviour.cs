@@ -8,8 +8,6 @@ public class EnemyAttackBehaviour : MonoBehaviour
     public int enemyHp;
     public Rigidbody enemyRb;
     
-    Transform wavesManager;
-
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
@@ -31,7 +29,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
             }
 
             enemyHp -= 1;
-            if (enemyHp == 0)
+            if (enemyHp <= 0)
             {
                 WavesManager.Instance.OnEnemyDied(gameObject);
                 Destroy(gameObject);
