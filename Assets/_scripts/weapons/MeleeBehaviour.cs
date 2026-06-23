@@ -31,7 +31,7 @@ public class MeleeBehaviour : MonoBehaviour
         {
             EnemyAttackBehaviour enemyHp = other.gameObject.GetComponent<EnemyAttackBehaviour>();
             enemyHp.enemyHp -= damage;
-            if (enemyHp.enemyHp == 0)
+            if (enemyHp.enemyHp <= 0)
             {
                 Destroy(other.gameObject);
             }

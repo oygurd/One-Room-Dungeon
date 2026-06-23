@@ -82,6 +82,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                  hitObject = laserHitAlly.collider.gameObject;
                 if (hitObject.TryGetComponent(out LaserGatingScannerBehaviour ally))
                 {
+                    distanceFromAlly = transform.position.y - hitObject.transform.localPosition.y;
                     animController.Searching = false;
                     mainBody.rotation = Quaternion.FromToRotation(-Vector3.right,
                         hitObject.transform.position - transform.position);
