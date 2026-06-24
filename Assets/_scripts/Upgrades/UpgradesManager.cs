@@ -61,22 +61,19 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     public void Applyupgrade(UpgradesScriptableObject upgrade)
     {
-        upgrade = allUpgrades[Random.Range(0, allUpgrades.Length)];
         PlayerHealth playerHealth = FindFirstObjectByType<PlayerHealth>();
         PlayerMovement playerMovement = FindFirstObjectByType<PlayerMovement>();
-        MeleeBehaviour meleeBehaviour = FindFirstObjectByType<MeleeBehaviour>();
+       // MeleeBehaviour meleeBehaviour = FindFirstObjectByType<MeleeBehaviour>();
+       playerShooting playerBaseWeapon = FindFirstObjectByType<playerShooting>();
         
         if (upgrade.healthBonus != 0)
             playerHealth.hp += (int)upgrade.healthBonus;
         if (upgrade.speedBonus != 0)
             playerMovement.MoveSpeed += (int)upgrade.speedBonus;
         if(upgrade.damageBonus != 0)
-            meleeBehaviour.damage += (int)upgrade.damageBonus;
+            playerBaseWeapon.tankProjectilesManager.damage += (int)upgrade.damageBonus;
 
         
-        if (upgrade.isSpecial)
-        {
-            
-        }
+       
     }
 }

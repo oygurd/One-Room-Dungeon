@@ -25,5 +25,5 @@ MonoBehaviour:
   name: Basic Shot
   damage: 1
   speed: 30
-  shotInterval: 3
+  shotInterval: 2
   description: 

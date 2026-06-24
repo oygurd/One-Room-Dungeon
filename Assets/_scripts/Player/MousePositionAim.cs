@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Sirenix.OdinInspector;
@@ -25,12 +26,15 @@ public class MousePositionAim : SerializedMonoBehaviour
             Vector3 mousepos = ray.GetPoint(distance);
             
             Vector3 direction = mousepos - transform.position;
-            direction.y = -90;
-
-            if (direction != Vector3.zero)
+            //direction.y = -90;
+            
+            float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg ;
+            transform.rotation = Quaternion.Euler(90, angle,0);
+            /*if (direction != Vector3.zero)
             {
                 transform.rotation = Quaternion.LookRotation(direction ) * quaternion.Euler(0,55,0);
-            }
+                
+            }*/
             showPointer.position = ray.GetPoint(distance);
         }
     }

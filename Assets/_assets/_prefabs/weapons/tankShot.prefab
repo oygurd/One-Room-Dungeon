@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5262668307917130793}
   - component: {fileID: 3399335752190837062}
   - component: {fileID: 8291463022867465770}
+  - component: {fileID: 2392945126948953640}
   m_Layer: 0
   m_Name: tankShot
   m_TagString: Untagged
@@ -107,9 +108,9 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.65
-  m_Height: 2
-  m_Direction: 1
+  m_Radius: 1.01
+  m_Height: 10.8
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8291463022867465770
 Rigidbody:
@@ -138,3 +139,16 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &2392945126948953640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5786822677384007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e8f57edd3e3e5429698c072c77ebd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankProjectilesManager: {fileID: 11400000, guid: 1597aa4abcb892043b55d9ae815a2c6e, type: 2}

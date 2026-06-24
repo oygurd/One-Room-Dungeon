@@ -18,6 +18,16 @@ public class EnemyAttackBehaviour : MonoBehaviour
         WavesManager.Instance.OnEnemyDied(gameObject);
     }
 
+    private void Update()
+    {
+        if (enemyHp <= 0)
+        {
+            WavesManager.Instance.OnEnemyDied(gameObject);
+            Destroy(gameObject);
+                
+        }
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
