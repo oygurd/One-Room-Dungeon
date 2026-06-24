@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cd258f04f4ac4a47884de92350f2422, type: 3}
-  m_Name: TemporaryShield
+  m_Name: fireRateBonus
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,14 +21,13 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  upgradeName: 4 way shield
-  upgradeDescription: Get 4 shields that stay locked to you, pushing back enemies
-    when hit
+  upgradeName: Fire Rate Bonus
+  upgradeDescription: Increase your basic weapon's fire rate
   upgradeIcon: {fileID: 0}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 0
-  attackSpeedBonus: 0
-  isSpecial: 1
-  specialItemPrefab: {fileID: 8308904616860227466, guid: 90a33f370b291854e88b89bead56ada8, type: 3}
+  attackSpeedBonus: 0.3
+  isSpecial: 0
+  specialItemPrefab: {fileID: 0}
   specialItem: {fileID: 0}

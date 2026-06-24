@@ -22,6 +22,9 @@ public class UpgradesManager : SerializedMonoBehaviour
         Time.timeScale = 0;
         upgradeScreenUI.SetActive(true);
 
+        Cursor.visible = true;
+        PlayerCursorToMouse cursor = FindFirstObjectByType<PlayerCursorToMouse>();
+        cursor.enabled = false;
 
         List<UpgradesScriptableObject> choices = GetRandomUpgrades(3);
 
@@ -48,6 +51,8 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     public void HideUpgradeScreen()
     {
+        PlayerCursorToMouse cursor = FindFirstObjectByType<PlayerCursorToMouse>();
+        cursor.enabled = false;
         upgradeScreenUI.SetActive(false);
         Time.timeScale = 1;
     }
@@ -65,6 +70,7 @@ public class UpgradesManager : SerializedMonoBehaviour
         PlayerMovement playerMovement = FindFirstObjectByType<PlayerMovement>();
        // MeleeBehaviour meleeBehaviour = FindFirstObjectByType<MeleeBehaviour>();
        playerShooting playerBaseWeapon = FindFirstObjectByType<playerShooting>();
+       SpecialUpgradeHandler specialUpgradeHandler = FindFirstObjectByType<SpecialUpgradeHandler>();
         
         if (upgrade.healthBonus != 0)
             playerHealth.hp += (int)upgrade.healthBonus;
@@ -72,8 +78,13 @@ public class UpgradesManager : SerializedMonoBehaviour
             playerMovement.MoveSpeed += (int)upgrade.speedBonus;
         if(upgrade.damageBonus != 0)
             playerBaseWeapon.tankProjectilesManager.damage += (int)upgrade.damageBonus;
-        if (upgrade.attackSpeedBonus != 0)
-            playerBaseWeapon.tankProjectilesManager.shotInterval -= upgrade.attackSpeedBonus;
+        if (upgrade.fireRateBonus != 0)
+            playerBaseWeapon.tankProjectilesManager.shotInterval -=(float) upgrade.fireRateBonus;
+
+        if (upgrade.isSpecial)
+        {
+            Instantiate(specialUpgradeHandler.transform);
+        }
 
 
     }
