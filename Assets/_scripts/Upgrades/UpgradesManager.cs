@@ -52,7 +52,7 @@ public class UpgradesManager : SerializedMonoBehaviour
     public void HideUpgradeScreen()
     {
         PlayerCursorToMouse cursor = FindFirstObjectByType<PlayerCursorToMouse>();
-        cursor.enabled = false;
+        cursor.enabled = true;
         upgradeScreenUI.SetActive(false);
         Time.timeScale = 1;
     }
