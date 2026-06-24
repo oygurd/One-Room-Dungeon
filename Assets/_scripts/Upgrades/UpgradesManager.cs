@@ -53,6 +53,7 @@ public class UpgradesManager : SerializedMonoBehaviour
     {
         PlayerCursorToMouse cursor = FindFirstObjectByType<PlayerCursorToMouse>();
         cursor.enabled = true;
+        Cursor.visible = false;
         upgradeScreenUI.SetActive(false);
         Time.timeScale = 1;
     }
@@ -80,11 +81,9 @@ public class UpgradesManager : SerializedMonoBehaviour
             playerBaseWeapon.tankProjectilesManager.damage += (int)upgrade.damageBonus;
         if (upgrade.fireRateBonus != 0)
             playerBaseWeapon.tankProjectilesManager.shotInterval -=(float) upgrade.fireRateBonus;
-
-        if (upgrade.isSpecial)
-        {
-            Instantiate(specialUpgradeHandler.transform);
-        }
+        if (upgrade.isSpecial && upgrade.specialItemPrefab != null)
+            Instantiate(upgrade.specialItemPrefab);
+        
 
 
     }

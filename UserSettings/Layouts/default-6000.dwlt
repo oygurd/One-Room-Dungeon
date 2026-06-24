@@ -664,7 +664,7 @@ MonoBehaviour:
       containerId: overlay-toolbar__left
       displayed: 0
       id: Brush Masks
-      index: 1
+      index: 2
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
@@ -1010,6 +1010,48 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      displayed: 0
+      id: Brush Attributes (0)
+      index: 3
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__left
+      displayed: 0
+      id: Brush Filters
+      index: 1
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: brush-info-overlay
+      index: 13
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
     m_ContainerData:
     - containerId: overlay-toolbar__top
       scrollOffset: 0
@@ -1037,7 +1079,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -47.094475, y: -9.28425, z: -28.391096}
+    m_Target: {x: 116.30002, y: 179.5, z: 0}
     speed: 2
     m_Value: {x: -47.094475, y: -9.28425, z: -28.391096}
   m_RenderMode: 0
@@ -1085,11 +1127,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08661093, y: -0.90094787, z: 0.36881852, w: -0.21222335}
+    m_Target: {x: 0.17259881, y: 0.67609155, z: -0.16770469, w: 0.69663787}
     speed: 2
     m_Value: {x: 0.08661093, y: 0.9009478, z: -0.36881852, w: 0.21222334}
   m_Size:
-    m_Target: 11.428205
+    m_Target: 225.80237
     speed: 2
     m_Value: 11.428205
   m_Ortho:
@@ -2754,7 +2796,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 111}
     m_SelectedIDs: cebb0000
     m_LastClickedID: 48078
-    m_ExpandedIDs: 0000000008bb00000abb00000cbb00000ebb000010bb000012bb000014bb000016bb000018bb00001abb00001cbb00001ebb0000
+    m_ExpandedIDs: 0000000068bf00006abf00006cbf00006ebf000070bf000072bf000074bf000076bf000078bf00007abf00007cbf00007ebf0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2783,7 +2825,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000008bb00000abb00000cbb00000ebb000010bb000012bb000014bb000016bb000018bb00001abb00001cbb00001ebb0000
+    m_ExpandedIDs: 0000000068bf00006abf00006cbf00006ebf000070bf000072bf000074bf000076bf000078bf00007abf00007cbf00007ebf0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

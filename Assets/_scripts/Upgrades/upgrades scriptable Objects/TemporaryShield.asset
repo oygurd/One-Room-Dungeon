@@ -24,11 +24,11 @@ MonoBehaviour:
   upgradeName: 4 way shield
   upgradeDescription: Get 4 shields that stay locked to you, pushing back enemies
     when hit
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 0
-  attackSpeedBonus: 0
+  fireRateBonus: 0
   isSpecial: 1
   specialItemPrefab: {fileID: 8308904616860227466, guid: 90a33f370b291854e88b89bead56ada8, type: 3}
   specialItem: {fileID: 0}

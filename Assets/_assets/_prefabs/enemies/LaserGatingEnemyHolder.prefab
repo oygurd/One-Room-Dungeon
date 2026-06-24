@@ -4882,7 +4882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -5169,6 +5169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055256548071586699}
   - component: {fileID: 6579172025299891429}
+  - component: {fileID: 8756575775638483469}
   - component: {fileID: 8835365050048348936}
   m_Layer: 0
   m_Name: Laser
@@ -5300,6 +5301,23 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &8756575775638483469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654392748288133237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a244326ed0433409c72b1785960e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserGatingScannerBehaviour: {fileID: 8318437867922517589}
+  attackLaserActive: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &8835365050048348936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5461,7 +5479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -5477,7 +5495,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   mainBody: {fileID: 4662446677651448341}
-  shootInterval: 2
   LaserRange: 0
   distance: 0
   distanceFromAlly: 0
@@ -5488,6 +5505,10 @@ MonoBehaviour:
   checkerForAllies: 0
   rayIsRed: 0
   shootingLaser: 0
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  attackLaserActive: 0
   hitObject: {fileID: 0}
 --- !u!65 &4350460127729103522
 BoxCollider:

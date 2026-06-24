@@ -21,6 +21,11 @@ public class RangedEnemyBehaviourManager : EnemyAttackBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Lure").transform;
     }
+    private void OnDestroy()
+    {
+        WavesManager.Instance.OnEnemyDied(gameObject);
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,6 +33,12 @@ public class RangedEnemyBehaviourManager : EnemyAttackBehaviour
         distance = Vector3.Distance(player.position, transform.position);
         Shoot();
         GotoPlayer();
+        if (enemyHp <= 0)
+        {
+            // WavesManager.Instance.OnEnemyDied(gameObject);
+            Destroy(gameObject);
+                
+        }
     }
     
 
@@ -58,5 +69,24 @@ public class RangedEnemyBehaviourManager : EnemyAttackBehaviour
         shotRb.AddForce(transform.forward * projectileSpeed, ForceMode.Impulse);
         yield return new WaitForSeconds(shootInterval);
         isShooting = false;
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Die();
+            if (collision.TryGetComponent(out PlayerHealth playerHealth))
+            {
+                playerHealth.LowerHp(); // lower PLAYER hp
+            }
+            
+            enemyHp --;
+            /*if (enemyHp <= 0)
+            {
+                WavesManager.Instance.OnEnemyDied(gameObject);
+                Destroy(gameObject);
+
+            }*/
+        }
     }
 }

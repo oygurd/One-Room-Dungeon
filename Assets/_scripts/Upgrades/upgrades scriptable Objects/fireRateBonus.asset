@@ -23,11 +23,11 @@ MonoBehaviour:
     SerializationNodes: []
   upgradeName: Fire Rate Bonus
   upgradeDescription: Increase your basic weapon's fire rate
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 0
-  attackSpeedBonus: 0.3
+  fireRateBonus: 0
   isSpecial: 0
   specialItemPrefab: {fileID: 0}
   specialItem: {fileID: 0}

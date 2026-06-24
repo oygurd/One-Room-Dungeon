@@ -22,7 +22,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
     {
         if (enemyHp <= 0)
         {
-            WavesManager.Instance.OnEnemyDied(gameObject);
+           // WavesManager.Instance.OnEnemyDied(gameObject);
             Destroy(gameObject);
                 
         }
@@ -37,14 +37,14 @@ public class EnemyAttackBehaviour : MonoBehaviour
             {
                 playerHealth.LowerHp(); // lower PLAYER hp
             }
-
+            
             enemyHp --;
-            if (enemyHp <= 0)
+            /*if (enemyHp <= 0)
             {
                 WavesManager.Instance.OnEnemyDied(gameObject);
                 Destroy(gameObject);
                 
-            }
+            }*/
         }
     }
 }

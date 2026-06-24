@@ -14,7 +14,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     public LaserGatingEnemyAnimController animController;
 
     public GameObject laser;
-    
+
     public LayerMask allyLaserLayer;
     [Title("Base settings")] private Collider self;
 
@@ -40,7 +40,14 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     RaycastHit laserHitAlly;
     RaycastCommand raycasthitAlly;
 
+    public LayerMask playerMask;
+    RaycastHit laserHitPlayer;
+    public bool attackLaserActive;
+
+    private GameObject player;
+
     public GameObject hitObject;
+
     private void Start()
     {
         self = GetComponent<Collider>();
@@ -63,6 +70,9 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
         if (!rayIsRed && startSearching)
         {
             FindClosestLaserAlly();
+            /*attackLaserActive = Physics.Raycast(transform.position, transform.up, out laserHitPlayer, distanceFromAlly,
+                playerMask);*/
+            CastLaserDamage();
         }
 
         distance = mainLaserGatingScript.distance;
@@ -78,7 +88,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                 detectedAnotherLaserEnemy = true;
                 mainLaserGatingScript.movementStop = true;
 
-                 hitObject = laserHitAlly.collider.gameObject;
+                hitObject = laserHitAlly.collider.gameObject;
                 if (hitObject.TryGetComponent(out LaserGatingScannerBehaviour ally))
                 {
                     distanceFromAlly = transform.position.y - hitObject.transform.localPosition.y;
@@ -105,6 +115,28 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
 
     public void ChangeAllyDistance()
     {
+    }
+
+    private void CastLaserDamage()
+    {
+        int hitTimes = 0;
+        attackLaserActive = Physics.Raycast(transform.position, transform.up, out laserHitPlayer, distanceFromAlly, 
+            LayerMask.GetMask("Player"));
+
+        if (attackLaserActive)
+        {
+            hitTimes = 1;
+            player = laserHitPlayer.transform.gameObject;
+            if (player.TryGetComponent(out PlayerHealth playergo))
+            {
+                playergo.hp--;
+            }
+        }
+
+        if (!attackLaserActive)
+        {
+            hitTimes = 0;
+        }
     }
 
     private void OnDrawGizmos()

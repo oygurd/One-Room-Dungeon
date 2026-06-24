@@ -10,7 +10,8 @@ public class UpgradeCardUI : MonoBehaviour
     
     public TMP_Text specialDescription;
     public Sprite specialSprite;
-    
+
+    public GameObject specialUpgradePrefab;
     private UpgradesScriptableObject currentUpgrade;
 
     public void Setup(UpgradesScriptableObject upgrade)
@@ -24,6 +25,7 @@ public class UpgradeCardUI : MonoBehaviour
         {
             specialDescription.text = upgrade.specialItem.damage.ToString();
             specialSprite = upgrade.specialItem.icon;
+            specialUpgradePrefab = upgrade.specialItemPrefab;
         }
         
         selectButton.onClick.RemoveAllListeners();

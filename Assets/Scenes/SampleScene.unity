@@ -1212,6 +1212,7 @@ MonoBehaviour:
   selectButton: {fileID: 913667670}
   specialDescription: {fileID: 1581759652}
   specialSprite: {fileID: 0}
+  specialUpgradePrefab: {fileID: 0}
 --- !u!114 &913667670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,6 +1758,7 @@ MonoBehaviour:
   selectButton: {fileID: 1195889773}
   specialDescription: {fileID: 1571035909}
   specialSprite: {fileID: 0}
+  specialUpgradePrefab: {fileID: 0}
 --- !u!1 &1209679178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,6 +2685,7 @@ MonoBehaviour:
   selectButton: {fileID: 1643578831}
   specialDescription: {fileID: 1315970666}
   specialSprite: {fileID: 0}
+  specialUpgradePrefab: {fileID: 0}
 --- !u!114 &1643578831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3150,6 +3153,10 @@ PrefabInstance:
     - target: {fileID: 7054002439080702913, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054002439080702913, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8183439031140758904, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
       propertyPath: serializationData.Prefab

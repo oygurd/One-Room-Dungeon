@@ -77,7 +77,7 @@ public class WavesManager : MonoBehaviour
 
     public void OnEnemyDied(GameObject enemy)
     {
-        enemiesAlive -= 1;
+        enemiesAlive --;
         livingEnemies.Remove(enemy);
 
         if (enemiesAlive <= 0 && waveInProgress)
