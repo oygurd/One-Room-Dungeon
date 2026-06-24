@@ -14,6 +14,7 @@ public class UpgradesScriptableObject : SerializedScriptableObject
     public int damageBonus;
     public int healthBonus;
     public int speedBonus;
+    public float attackSpeedBonus;
     
     [Header("Specials")]
     public bool isSpecial;

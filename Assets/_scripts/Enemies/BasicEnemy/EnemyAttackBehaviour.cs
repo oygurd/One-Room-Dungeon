@@ -38,7 +38,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
                 playerHealth.LowerHp(); // lower PLAYER hp
             }
 
-            enemyHp -= 1;
+            enemyHp --;
             if (enemyHp <= 0)
             {
                 WavesManager.Instance.OnEnemyDied(gameObject);

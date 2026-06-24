@@ -72,8 +72,9 @@ public class UpgradesManager : SerializedMonoBehaviour
             playerMovement.MoveSpeed += (int)upgrade.speedBonus;
         if(upgrade.damageBonus != 0)
             playerBaseWeapon.tankProjectilesManager.damage += (int)upgrade.damageBonus;
+        if (upgrade.attackSpeedBonus != 0)
+            playerBaseWeapon.tankProjectilesManager.shotInterval -= upgrade.attackSpeedBonus;
 
-        
-       
+
     }
 }

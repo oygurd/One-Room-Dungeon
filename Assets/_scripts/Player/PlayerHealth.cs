@@ -28,11 +28,11 @@ public class PlayerHealth : MonoBehaviour
         hp -= 1;
     }
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             LowerHp();
         }
-    }
+    }*/
 }

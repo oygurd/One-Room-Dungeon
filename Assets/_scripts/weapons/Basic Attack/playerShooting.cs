@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+
 
 public class playerShooting : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class playerShooting : MonoBehaviour
     public float elapsedTime;
     public TankProjectilesManager tankProjectilesManager;
 
+    public Transform body;
     public Transform nozzle;
 
     public PlayerAnimationsHanldler playerAnims;
@@ -40,10 +43,10 @@ public class playerShooting : MonoBehaviour
             elapsedTime = 0;
             shotIntervalIndicator.size = 0;
             canShoot = false;   
-            StartCoroutine(ShotInterval());
             GameObject shot = Instantiate(tankProjectilesManager.prefab, nozzle.transform.position, nozzle.rotation);
             Rigidbody shotrb = shot.GetComponent<Rigidbody>();
             shotrb.AddForce(nozzle.up * tankProjectilesManager.speed, ForceMode.Impulse);
+            StartCoroutine(ShotInterval());
 
             Destroy(shot, 10);
         }
