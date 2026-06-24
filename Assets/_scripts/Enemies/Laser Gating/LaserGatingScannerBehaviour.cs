@@ -20,7 +20,6 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
 
     public Transform mainBody;
 
-    public float shootInterval = 2f;
     public float LaserRange = 15f;
     public float distance;
     public float distanceFromAlly;
