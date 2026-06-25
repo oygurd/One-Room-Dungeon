@@ -71,7 +71,7 @@ public class UpgradesManager : SerializedMonoBehaviour
         PlayerMovement playerMovement = FindFirstObjectByType<PlayerMovement>();
        // MeleeBehaviour meleeBehaviour = FindFirstObjectByType<MeleeBehaviour>();
        playerShooting playerBaseWeapon = FindFirstObjectByType<playerShooting>();
-       SpecialUpgradeHandler specialUpgradeHandler = FindFirstObjectByType<SpecialUpgradeHandler>();
+       //SpecialUpgradeHandler specialUpgradeHandler = FindFirstObjectByType<SpecialUpgradeHandler>();
         
         if (upgrade.healthBonus != 0)
             playerHealth.hp += (int)upgrade.healthBonus;
@@ -80,7 +80,7 @@ public class UpgradesManager : SerializedMonoBehaviour
         if(upgrade.damageBonus != 0)
             playerBaseWeapon.tankProjectilesManager.damage += (int)upgrade.damageBonus;
         if (upgrade.fireRateBonus != 0)
-            playerBaseWeapon.tankProjectilesManager.shotInterval -=(float) upgrade.fireRateBonus;
+            playerBaseWeapon.tankProjectilesManager.shotInterval -=(float)upgrade.fireRateBonus;
         if (upgrade.isSpecial && upgrade.specialItemPrefab != null)
             Instantiate(upgrade.specialItemPrefab);
         

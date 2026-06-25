@@ -23,8 +23,8 @@ public class UpgradeCardUI : MonoBehaviour
 
         if (upgrade.isSpecial) //if an upgrade is special, show its stats and icon as well
         {
-            specialDescription.text = upgrade.specialItem.damage.ToString();
-            specialSprite = upgrade.specialItem.icon;
+            //specialDescription.text = upgrade.specialItem.damage.ToString();
+            //specialSprite = upgrade.specialItem.icon;
             specialUpgradePrefab = upgrade.specialItemPrefab;
         }
         
