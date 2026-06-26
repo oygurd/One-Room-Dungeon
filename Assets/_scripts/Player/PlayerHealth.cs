@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     public void LowerHp()
     {
         hp -= 1;
+        GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHit();
     }
 
     /*private void OnCollisionEnter(Collision other)
