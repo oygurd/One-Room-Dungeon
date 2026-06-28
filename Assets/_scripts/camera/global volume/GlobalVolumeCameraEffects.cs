@@ -9,15 +9,18 @@ public class GlobalVolumeCameraEffects : MonoBehaviour
     Camera mainCam;
     
     public Volume  volume;
+    VolumeProfile defaultVolumeProfile;
     ChromaticAberration cameraChromaticAberration;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        globalVolumeCameraEffectsInstance = this;
         mainCam = Camera.main;
         volume = FindAnyObjectByType<Volume>();
-        //cameraChromaticAberration = FindAnyObjectByType<ChromaticAberration>();
+       // cameraChromaticAberration =  volume.GetComponent<ChromaticAberration>();
+        defaultVolumeProfile = volume.sharedProfile;
 
     }
 
@@ -25,15 +28,16 @@ public class GlobalVolumeCameraEffects : MonoBehaviour
 
     public void GettingHit()
     {
-        if (volume.profile.TryGet<ChromaticAberration>(out cameraChromaticAberration))
+        if (defaultVolumeProfile.TryGet(out cameraChromaticAberration))
         {
             cameraChromaticAberration.intensity.value = 1;
+            Debug.Log(cameraChromaticAberration.intensity.value);
         }
     }
 
     public void GettingHitReset()
     {
-        if (volume.profile.TryGet<ChromaticAberration>(out cameraChromaticAberration))
+        if (defaultVolumeProfile.TryGet(out cameraChromaticAberration))
         {
             cameraChromaticAberration.intensity.value = 0;
         }

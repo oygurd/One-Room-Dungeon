@@ -39,6 +39,7 @@ public class playerShooting : MonoBehaviour
     {
         if (shootingAttack.WasPressedThisFrame() && canShoot)
         {
+            PlayerShootingVfx.playerShootingVfxInstance.EnableShootVFX();
             playerAnims.Shoot();
             elapsedTime = 0;
             shotIntervalIndicator.size = 0;
@@ -47,6 +48,7 @@ public class playerShooting : MonoBehaviour
             Rigidbody shotrb = shot.GetComponent<Rigidbody>();
             shotrb.AddForce(nozzle.up * tankProjectilesManager.speed, ForceMode.Impulse);
             StartCoroutine(ShotInterval());
+            //PlayerShootingVfx.playerShootingVfxInstance.DisableShootingVFX();
 
             Destroy(shot, 10);
         }
