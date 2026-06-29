@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 using Sirenix.OdinInspector;
-using UnityEditor.AnimatedValues;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
 {

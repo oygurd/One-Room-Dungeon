@@ -31,7 +31,7 @@ public class GlobalVolumeCameraEffects : MonoBehaviour
         if (defaultVolumeProfile.TryGet(out cameraChromaticAberration))
         {
             cameraChromaticAberration.intensity.value = 1;
-            Debug.Log(cameraChromaticAberration.intensity.value);
+          // Debug.Log(cameraChromaticAberration.intensity.value);
         }
     }
 

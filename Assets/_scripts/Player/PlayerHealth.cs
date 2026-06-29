@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     [ProgressBar(0, 20, r: 1, g: 1, b: 1, Height = 20)]
     public int hp = 20;
+
+    public TMP_Text hpText;
 
     // Update is called once per frame
     void Update()
@@ -14,12 +17,13 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        hpText.text = hp.ToString();
     }
 
     public void LowerHp()
     {
         hp -= 1;
-        GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHitSequence();
+        StartCoroutine(GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHitSequence());
     }
 
     /*private void OnCollisionEnter(Collision other)
