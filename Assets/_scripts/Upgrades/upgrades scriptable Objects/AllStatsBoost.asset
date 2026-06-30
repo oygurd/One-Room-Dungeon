@@ -24,12 +24,12 @@ MonoBehaviour:
   upgradeName: Overall joy
   upgradeDescription: 'Increase all of your stasts by 1!
 
-    (Fire rate bonus lowered
-    by 0.4)'
+    (Fire rate bonus increased
+    by 0.05)'
   upgradeIcon: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
   damageBonus: 1
   healthBonus: 1
   speedBonus: 1
-  fireRateBonus: 0.4
+  fireRateBonus: 0.05
   isSpecial: 0
   specialItemPrefab: {fileID: 0}

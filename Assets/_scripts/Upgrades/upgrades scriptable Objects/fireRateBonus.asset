@@ -27,7 +27,6 @@ MonoBehaviour:
   damageBonus: 0
   healthBonus: 0
   speedBonus: 0
-  fireRateBonus: 0
+  fireRateBonus: 0.02
   isSpecial: 0
   specialItemPrefab: {fileID: 0}
-  specialItem: {fileID: 0}
