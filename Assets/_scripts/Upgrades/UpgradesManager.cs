@@ -83,7 +83,13 @@ public class UpgradesManager : SerializedMonoBehaviour
             playerBaseWeapon.tankProjectilesManager.shotInterval -=(float)upgrade.fireRateBonus;
         if (upgrade.isSpecial && upgrade.specialItemPrefab != null)
             Instantiate(upgrade.specialItemPrefab);
-        
+        if (upgrade.isSpecial && upgrade.isExtraBarrels)
+            extraBarrelsManager.extraBarrelInstance.RevealBarrel();
+            
+
+
+
+
 
 
     }
