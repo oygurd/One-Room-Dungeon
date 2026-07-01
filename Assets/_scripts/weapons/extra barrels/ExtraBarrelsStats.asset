@@ -25,5 +25,5 @@ MonoBehaviour:
   name: Extra Barrel
   damage: 1
   speed: 10
-  shotInterval: 1
+  shotInterval: 3
   description: 
