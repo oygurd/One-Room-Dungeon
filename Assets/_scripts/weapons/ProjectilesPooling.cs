@@ -4,49 +4,49 @@ using UnityEngine;
 
 public class ProjectilesPooling : MonoBehaviour
 {
-    public  TankProjectilesManager projectilesManager;
-    
-    public static ProjectilesPooling projectilesPoolingInstance;
-    public List<GameObject> pooledProjectile;
-    public GameObject objectToPool;
-    public int amountToPool;
-    
-    public float shootingInterval;
-    public int damage;
-    public float speed;
+    public TankProjectilesManager projectilesManager; // scriptable object
+    public static ProjectilesPooling projectilesPoolingInstance; // this
 
-    public bool canShoot;
+
+    public GameObject prefab;
+    private GameObject tmpPrefab;
+    [SerializeField] private int poolSize;
+    public int activeProjectiles;
+    public List<GameObject> poolingObject = new List<GameObject>();
 
     private void Awake()
     {
         projectilesPoolingInstance = this;
-        shootingInterval = projectilesManager.shotInterval;
-        damage = projectilesManager.damage;
-        speed = projectilesManager.speed;
-        
-    }
 
-    private void Start()
-    {
-       pooledProjectile = new List<GameObject>();
-       GameObject tmp;
-       for (int i = 0; i < amountToPool;  i++)
-       {
-           tmp = Instantiate(objectToPool);
-           tmp.SetActive(false);
-           pooledProjectile.Add(tmp);
-       }
-    }
-
-    public GameObject GetPooledProjectile()
-    {
-        for (int i = 0; i < amountToPool; i++)
+        for (int i = 0; i < poolSize; i++)
         {
-            if (!pooledProjectile[i].activeInHierarchy)
+            tmpPrefab = Instantiate(prefab, transform.position, Quaternion.identity);
+            tmpPrefab.SetActive(false);
+            poolingObject.Add(tmpPrefab);
+        }
+        activeProjectiles = poolingObject.Count;
+    }
+
+    private void Update()
+    {
+        AdjustPoolingSizeBasedOnDemand();
+    }
+
+    public void AdjustPoolingSizeBasedOnDemand()
+    {
+        if (activeProjectiles == 0)
+        {
+            for (int i = 0; i < poolSize; i++)
             {
-                return pooledProjectile[i];
+                tmpPrefab = Instantiate(prefab, transform.position, Quaternion.identity);
+                tmpPrefab.SetActive(false);
+                poolingObject.Add(tmpPrefab);
             }
         }
-        return null;
     }
+
+    /*public GameObject AvailableShot()
+    {
+        poolingObject.
+    }*/
 }
