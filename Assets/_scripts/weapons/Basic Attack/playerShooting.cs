@@ -16,6 +16,7 @@ public class playerShooting : MonoBehaviour
     public bool canShoot = true;
     public float elapsedTime;
     public TankProjectilesManager tankProjectilesManager;
+    float shotingInterval;
 
     public Transform body;
     public Transform nozzle;
@@ -24,6 +25,13 @@ public class playerShooting : MonoBehaviour
     private void OnEnable()
     {
         playerInputActionAsset.FindAction("Attack").Enable();
+    }
+
+    private void Awake()
+    {
+        tankProjectilesManager.damage = tankProjectilesManager.defaultVal.damage;
+        tankProjectilesManager.speed = tankProjectilesManager.defaultVal.speed;
+        tankProjectilesManager.shotInterval = tankProjectilesManager.defaultVal.shotInterval;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

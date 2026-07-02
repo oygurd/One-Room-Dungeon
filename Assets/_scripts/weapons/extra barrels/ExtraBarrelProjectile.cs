@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class ExtraBarrelProjectile : MonoBehaviour
 {
     public bool canShoot;
-    
+
     public TankProjectilesManager projectilesManager;
     public float shootingInterval;
     public int damage;
@@ -21,22 +21,30 @@ public class ExtraBarrelProjectile : MonoBehaviour
         damage = projectilesManager.damage;
         speed = projectilesManager.speed;
         canShoot = true;
-        
+
         projectile = ProjectilesPooling.projectilesPoolingInstance.prefab;
-        
     }
 
+    private void Update()
+    {
+        if (canShoot)
+        {
+            StartCoroutine(ShootingSequencer());
+            canShoot = false;
+        }
+    }
 
     public void Shoot()
     {
-       
+        ProjectilesPooling.projectilesPoolingInstance.ShootingManager();
     }
 
-    /*
     IEnumerator ShootingSequencer()
     {
-        
+        Shoot();
+        ProjectilesPooling.projectilesPoolingInstance.StartCoroutine(ProjectilesPooling.projectilesPoolingInstance.ResetProjectile());
+        yield return new WaitForSeconds(shootingInterval);
+        canShoot = true;
     }
-    */
-        
+    
 }

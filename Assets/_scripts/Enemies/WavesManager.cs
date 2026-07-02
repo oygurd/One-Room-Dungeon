@@ -18,8 +18,7 @@ public class WavesManager : MonoBehaviour
 
     [SerializeField] public int enemiesAlive = 0;
     private bool waveInProgress = false;
-
-
+    
     private void Awake()
     {
         Instance = this;
@@ -73,8 +72,7 @@ public class WavesManager : MonoBehaviour
 
         return list;
     }
-
-
+    
     public void OnEnemyDied(GameObject enemy)
     {
         enemiesAlive --;

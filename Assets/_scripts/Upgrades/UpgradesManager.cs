@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using Random = UnityEngine.Random;
 
 public class UpgradesManager : SerializedMonoBehaviour
 {
@@ -15,6 +17,14 @@ public class UpgradesManager : SerializedMonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            ShowUpgradeScreen();
+        }
     }
 
     public void ShowUpgradeScreen()

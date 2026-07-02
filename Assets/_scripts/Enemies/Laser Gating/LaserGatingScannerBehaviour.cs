@@ -78,7 +78,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
         if (!detectedAnotherLaserEnemy)
         {
             //transform.Rotate(0, 50 * Time.deltaTime, 0);
-            if (checkerForAllies)
+            if (checkerForAllies && distance <= mainLaserGatingScript.LimitRnageToPlayer)
             {
                 detectedAnotherLaserEnemy = true;
                 mainLaserGatingScript.movementStop = true;
@@ -104,6 +104,11 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                     distanceFromAlly = laserHitAlly.distance;
                     laser.SetActive(true);
                 }
+            }
+
+            if (distance >= mainLaserGatingScript.LimitRnageToPlayer)
+            {
+                
             }
         }
     }

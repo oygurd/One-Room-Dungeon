@@ -24,8 +24,8 @@ public class extraBarrelsManager : SerializedMonoBehaviour
     {
         if (i != barrelTips.Length) // limit 'i' to the number of extra barrels possible
         {
-            i++;
             barrels[i].SetActive(true);
+            i++;
         }
     }
 
