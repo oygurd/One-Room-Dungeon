@@ -20,6 +20,7 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
     public bool shootingLaser;
 
     public bool movementStop;
+    public bool canLookForPlayer;
     [SerializeField] Transform player;
 
     public Transform selectedLaserEnemy;
@@ -34,6 +35,7 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Lure").transform;
+        canLookForPlayer = true;
     }
 
     // Update is called once per frame
@@ -41,7 +43,10 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
     {
         distance = Vector3.Distance(player.position, transform.position);
         //Shoot();
-        GotoPlayer();
+        if (canLookForPlayer)
+        {
+            GotoPlayer();
+        }
     }
 
 

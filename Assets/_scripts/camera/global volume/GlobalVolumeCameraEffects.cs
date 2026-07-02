@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-
+using Cysharp.Threading.Tasks;
 public class GlobalVolumeCameraEffects : MonoBehaviour
 {
     public static GlobalVolumeCameraEffects globalVolumeCameraEffectsInstance {get; private set;}
@@ -21,6 +21,7 @@ public class GlobalVolumeCameraEffects : MonoBehaviour
         volume = FindAnyObjectByType<Volume>();
        // cameraChromaticAberration =  volume.GetComponent<ChromaticAberration>();
         defaultVolumeProfile = volume.sharedProfile;
+        cameraChromaticAberration.intensity.value = 0;
 
     }
 
@@ -37,12 +38,17 @@ public class GlobalVolumeCameraEffects : MonoBehaviour
 
     public void GettingHitReset()
     {
+        float valueTime;
         if (defaultVolumeProfile.TryGet(out cameraChromaticAberration))
         {
             cameraChromaticAberration.intensity.value = 0;
         }
     }
 
+    /*async UniTask GettingHitReset()
+    {
+        
+    }*/
     public IEnumerator GettingHitSequence()
     {
         GettingHit();

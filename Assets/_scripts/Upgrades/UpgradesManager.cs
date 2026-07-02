@@ -21,7 +21,7 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.F2))
         {
             ShowUpgradeScreen();
         }

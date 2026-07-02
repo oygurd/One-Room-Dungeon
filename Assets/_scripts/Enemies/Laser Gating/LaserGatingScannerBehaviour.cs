@@ -68,8 +68,11 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
             /*attackLaserActive = Physics.Raycast(transform.position, transform.up, out laserHitPlayer, distanceFromAlly,
                 playerMask);*/
             CastLaserDamage();
-        }
+            mainLaserGatingScript.canLookForPlayer = false;
 
+        }
+        
+        KeepFollowing();
         distance = mainLaserGatingScript.distance;
     }
 
@@ -105,11 +108,6 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                     laser.SetActive(true);
                 }
             }
-
-            if (distance >= mainLaserGatingScript.LimitRnageToPlayer)
-            {
-                
-            }
         }
     }
 
@@ -117,6 +115,13 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
     {
     }
 
+    public void KeepFollowing()
+    {
+        if (distance > mainLaserGatingScript.rangeFromPlayer + 10 && !detectedAnotherLaserEnemy && !checkerForAllies)
+        {
+            mainLaserGatingScript.canLookForPlayer = true;
+        }
+    }
     private void CastLaserDamage()
     {
         int hitTimes = 0;
