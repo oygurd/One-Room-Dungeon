@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -23,7 +24,9 @@ public class PlayerHealth : MonoBehaviour
     public void LowerHp()
     {
         hp -= 1;
-        StartCoroutine(GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHitSequence());
+       // StartCoroutine(GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHitSequence());
+       GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHitSequence();
+       CameraShakeManager.instance.CamShaker();
     }
 
     /*private void OnCollisionEnter(Collision other)

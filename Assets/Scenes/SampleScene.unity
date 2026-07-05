@@ -888,7 +888,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 43.5, z: 0}
+  m_LocalPosition: {x: 0, y: 48.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2412,7 +2412,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1310045501}
   - component: {fileID: 1310045502}
-  - component: {fileID: 1310045503}
+  - component: {fileID: 1310045506}
+  - component: {fileID: 1310045505}
+  - component: {fileID: 1310045504}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -2429,7 +2431,7 @@ Transform:
   m_GameObject: {fileID: 1310045500}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 43.5, z: 0}
+  m_LocalPosition: {x: 0, y: 48.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2456,8 +2458,8 @@ MonoBehaviour:
   m_LegacyPriority: 0
   Target:
     TrackingTarget: {fileID: 155544854}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
+    LookAtTarget: {fileID: 155544854}
+    CustomLookAtTarget: 1
   Lens:
     FieldOfView: 42.6
     OrthographicSize: 5
@@ -2478,7 +2480,36 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
---- !u!114 &1310045503
+--- !u!114 &1310045504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310045500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa06df55642b1c4d91695f283904ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1310045505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310045500}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 1
+  FrequencyGain: 1
+  m_NoiseOffsets: {x: -433.92334, y: 563.2548, z: 95.83606}
+--- !u!114 &1310045506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2496,7 +2527,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 42.5, z: 0}
+  FollowOffset: {x: 0, y: 47.22, z: 0}
 --- !u!1 &1315970664
 GameObject:
   m_ObjectHideFlags: 0
