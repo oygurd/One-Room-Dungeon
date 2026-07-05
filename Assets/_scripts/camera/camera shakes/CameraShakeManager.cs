@@ -31,4 +31,6 @@ public class CameraShakeManager : MonoBehaviour
         await UniTask.Delay(TimeSpan.FromSeconds(0.3f));
         cameraShake.enabled = false;
     }
+    
+    
 }
