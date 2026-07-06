@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class playerShooting : MonoBehaviour
 {
-    public Scrollbar shotIntervalIndicator;
+    public Image shotIntervalIndicator;
     [SerializeField] private InputActionAsset playerInputActionAsset;
     public InputAction shootingAttack;
     
@@ -39,7 +39,7 @@ public class playerShooting : MonoBehaviour
     {
        // shotIntervalIndicator.size = 0;
         shootingAttack = InputSystem.actions.FindAction("Attack");
-        shotIntervalIndicator.size = 1;
+        shotIntervalIndicator.fillAmount = 1;
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class playerShooting : MonoBehaviour
             PlayerShootingVfx.playerShootingVfxInstance.EnableShootVFX();
             playerAnims.Shoot();
             elapsedTime = 0;
-            shotIntervalIndicator.size = 0;
+            shotIntervalIndicator.fillAmount = 0;
             canShoot = false;   
             GameObject shot = Instantiate(tankProjectilesManager.prefab, nozzle.transform.position, nozzle.rotation);
             Rigidbody shotrb = shot.GetComponent<Rigidbody>();
@@ -64,7 +64,7 @@ public class playerShooting : MonoBehaviour
         if (!canShoot)
         {
             elapsedTime += Time.deltaTime;
-            shotIntervalIndicator.size = Mathf.Clamp01(elapsedTime / tankProjectilesManager.shotInterval);
+            shotIntervalIndicator.fillAmount = Mathf.Clamp01(elapsedTime / tankProjectilesManager.shotInterval);
 
         }
     }
