@@ -117,9 +117,10 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
 
     public void KeepFollowing()
     {
-        if (distance > mainLaserGatingScript.rangeFromPlayer + 10 && !detectedAnotherLaserEnemy && !checkerForAllies)
+        if (distance > mainLaserGatingScript.rangeFromPlayer + 15 && !detectedAnotherLaserEnemy && !checkerForAllies && mainLaserGatingScript.movementStop)
         {
             mainLaserGatingScript.canLookForPlayer = true;
+            mainLaserGatingScript.movementStop = false;
         }
     }
     private void CastLaserDamage()

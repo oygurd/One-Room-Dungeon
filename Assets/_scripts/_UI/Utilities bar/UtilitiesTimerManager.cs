@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UtilitiesTimerManager : MonoBehaviour
 {
     public static UtilitiesTimerManager instance;
-    public Image instantiationLocation;
+    public Transform instantiationLocation;
 
     public Image baseImagePrefab;
     public List<Image> activeUtility = new List<Image>();
@@ -34,21 +34,23 @@ public class UtilitiesTimerManager : MonoBehaviour
 
     public void AddUtilityToBarPowerUp(Image icon, float duration)
     {
+        
     }
 
-    public void AddUtilityToBarUpgrade(Image upgradeIcon)
+    public void AddUtilityToBarUpgrade(Image upgradeIcon, int amount)
     {
-        activeUtility.Add(upgradeIcon);
-        Image upgradeBackground = Instantiate(baseImagePrefab, instantiationLocation.transform);
-        Image upgrade = Instantiate(upgradeIcon, instantiationLocation.transform); 
+        for (int i = 0; i < amount; i++)
+        {
+            activeUtility.Add(upgradeIcon);
+         
+            Image upgrade = Instantiate(upgradeIcon, instantiationLocation.transform);
 
-        upgrade.transform.position = new Vector2(upgrade.rectTransform.position.x + 50 * activeUtility.Count - 400 , upgrade.transform.position.y);
-        upgradeBackground.transform.position = new Vector2(upgrade.rectTransform.position.x + 50 * activeUtility.Count - 400 , upgrade.transform.position.y);
-        upgradeBackground.transform.position = upgrade.transform.position;
-        upgrade.preserveAspect = true;
+            upgrade.transform.position = new Vector2(upgrade.rectTransform.position.x + 80 * activeUtility.Count - 400, instantiationLocation.transform.position.y);
+            
+            upgrade.preserveAspect = true;
 
-        upgrade.transform.SetParent(instantiationLocation.transform);
-        // upgrade.rectTransform.position = instantiationLocation.transform.position;
-        upgrade.rectTransform.localScale = instantiationLocation.transform.localScale / 2.6f;
+            upgrade.transform.SetParent(instantiationLocation.transform);
+            upgrade.rectTransform.localScale = instantiationLocation.transform.localScale / 2.6f;
+        }
     }
 }

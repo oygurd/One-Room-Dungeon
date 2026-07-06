@@ -24,7 +24,8 @@ MonoBehaviour:
   upgradeName: Extra barrel
   upgradeDescription: Adds an extra static barrel, automatically shooting in its
     facing direction.
-  upgradeIcon: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
+  upgradeBackGround: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
+  upgradeIcon: {fileID: 1327724296, guid: 80ac119d5b48f3e4ba0a4775b128f855, type: 3}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 0

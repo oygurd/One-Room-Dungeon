@@ -52,7 +52,7 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
 
     public void GotoPlayer()
     {
-        if (distance > LimitRnageToPlayer && !movementStop)
+        if (distance > LimitRnageToPlayer && !movementStop && canLookForPlayer)
         {
             transform.LookAt(player);
             // transform.DOLocalMove(player.position, speed);
@@ -62,14 +62,7 @@ public class LaserGatingEnemyBehaviour : SerializedMonoBehaviour
         if (distance <= LimitRnageToPlayer)
         {
             laserGatingScript.startSearching = true;
-        }
-    }
-
-    public void Shoot()
-    {
-        if (distance <= laserGatingScript.LaserRange && !shootingLaser)
-        {
-            body.transform.LookAt(player);
+            movementStop = true;
         }
     }
 }
