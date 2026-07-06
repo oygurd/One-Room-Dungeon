@@ -650,6 +650,7 @@ GameObject:
   - component: {fileID: 189637044}
   - component: {fileID: 189637043}
   - component: {fileID: 189637042}
+  - component: {fileID: 189637046}
   m_Layer: 5
   m_Name: power ups/ upgrades indicator UI
   m_TagString: Untagged
@@ -740,6 +741,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &189637046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189637041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27da1c3d858ca144b9a50c1cf1e39a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instantiationLocation: {fileID: 1827688744}
+  baseImagePrefab: {fileID: 1827688744}
+  activeUtility: []
+  isTimeBased: 0
+  time: 0
 --- !u!1 &266810867 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2677847333429367223, guid: 4ecd5588e4426f34b9237b529efe63d0, type: 3}
@@ -1689,7 +1707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -86.9}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850057529
@@ -1843,7 +1861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -86.9}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &900412552
@@ -1874,7 +1892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -625307156, guid: a08beeffaf4954049b38a360613eeeda, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2103,7 +2121,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2790,7 +2808,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3601,7 +3619,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4069,7 +4087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -86.9}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730577642
@@ -4285,7 +4303,7 @@ GameObject:
   - component: {fileID: 1827688745}
   - component: {fileID: 1827688744}
   m_Layer: 5
-  m_Name: Image
+  m_Name: template+background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4307,7 +4325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -375}
+  m_AnchoredPosition: {x: -102.78003, y: -375}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827688744

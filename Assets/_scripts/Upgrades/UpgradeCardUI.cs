@@ -23,6 +23,7 @@ public class UpgradeCardUI : MonoBehaviour
         if (upgrade.upgradeIcon != null)
         {
             icon.sprite = upgrade.upgradeIcon;
+            icon.preserveAspect = true;
             icon.gameObject.SetActive(true);
         }
         else
@@ -39,6 +40,8 @@ public class UpgradeCardUI : MonoBehaviour
         
         selectButton.onClick.RemoveAllListeners();
         selectButton.onClick.AddListener(() => UpgradesManager.instance.SelectUpgrade(currentUpgrade));
+        selectButton.onClick.AddListener(() =>  UtilitiesTimerManager.instance.AddUtilityToBarUpgrade(icon));
+
     }
     
     
