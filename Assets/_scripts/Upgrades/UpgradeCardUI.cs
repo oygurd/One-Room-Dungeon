@@ -3,12 +3,12 @@ using UnityEngine.UI;
 using TMPro;
 public class UpgradeCardUI : MonoBehaviour
 {
+    public Image self; //self
     public Image icon;
     public TMP_Text nameText;
     public TMP_Text descriptionText;
     public Button selectButton;
     
-    public TMP_Text specialDescription;
     public Sprite specialSprite;
 
     public GameObject specialUpgradePrefab;
@@ -17,9 +17,18 @@ public class UpgradeCardUI : MonoBehaviour
     public void Setup(UpgradesScriptableObject upgrade)
     {
         currentUpgrade = upgrade;
-        icon.sprite = upgrade.upgradeIcon;
+        self.sprite = upgrade.upgradeBackGround;
         nameText.text = upgrade.upgradeName;
         descriptionText.text = upgrade.upgradeDescription;
+        if (upgrade.upgradeIcon != null)
+        {
+            icon.sprite = upgrade.upgradeIcon;
+            icon.gameObject.SetActive(true);
+        }
+        else
+        {
+            icon.gameObject.SetActive(false);
+        }
 
         if (upgrade.isSpecial) //if an upgrade is special, show its stats and icon as well
         {

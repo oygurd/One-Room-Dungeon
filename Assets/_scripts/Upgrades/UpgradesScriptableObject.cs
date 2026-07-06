@@ -8,6 +8,7 @@ public class UpgradesScriptableObject : SerializedScriptableObject
     public string upgradeName;
     [TextArea(4,10)]
     public string upgradeDescription;
+    public Sprite upgradeBackGround;
     public Sprite upgradeIcon;
     
     [Header("Stats")]

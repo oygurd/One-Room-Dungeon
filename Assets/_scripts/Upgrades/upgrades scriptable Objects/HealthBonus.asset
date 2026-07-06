@@ -23,9 +23,12 @@ MonoBehaviour:
     SerializationNodes: []
   upgradeName: Increase Base HP
   upgradeDescription: Increase your base health
-  upgradeIcon: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
+  upgradeBackGround: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
+  upgradeIcon: {fileID: 0}
   damageBonus: 0
   healthBonus: 1
   speedBonus: 0
+  fireRateBonus: 0
   isSpecial: 0
-  specialItem: {fileID: 0}
+  specialItemPrefab: {fileID: 0}
+  isExtraBarrels: 0

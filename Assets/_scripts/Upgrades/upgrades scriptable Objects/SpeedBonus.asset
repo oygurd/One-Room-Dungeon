@@ -23,10 +23,12 @@ MonoBehaviour:
     SerializationNodes: []
   upgradeName: Extra Base Speed
   upgradeDescription: Increase your base speed stat
-  upgradeIcon: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
+  upgradeBackGround: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
+  upgradeIcon: {fileID: 0}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 3
   fireRateBonus: 0
   isSpecial: 0
   specialItemPrefab: {fileID: 0}
+  isExtraBarrels: 0

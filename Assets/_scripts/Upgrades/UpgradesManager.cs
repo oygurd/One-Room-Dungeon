@@ -8,8 +8,7 @@ public class UpgradesManager : SerializedMonoBehaviour
 {
     public static UpgradesManager instance { get; private set; }
 
-    [Header("All Upgrades")]
-    public UpgradesScriptableObject[] allUpgrades;
+    [Header("All Upgrades")] public UpgradesScriptableObject[] allUpgrades;
 
     [Header("UI")] public GameObject upgradeScreenUI;
     public UpgradeCardUI[] upgradeCards;
@@ -42,7 +41,6 @@ public class UpgradesManager : SerializedMonoBehaviour
         {
             upgradeCards[i].Setup(choices[i]);
         }
-
     }
 
     List<UpgradesScriptableObject> GetRandomUpgrades(int count)
@@ -56,6 +54,7 @@ public class UpgradesManager : SerializedMonoBehaviour
             choices.Add(pool[index]);
             pool.RemoveAt(index); //no duplicates
         }
+
         return choices;
     }
 
@@ -79,28 +78,21 @@ public class UpgradesManager : SerializedMonoBehaviour
     {
         PlayerHealth playerHealth = FindFirstObjectByType<PlayerHealth>();
         PlayerMovement playerMovement = FindFirstObjectByType<PlayerMovement>();
-       // MeleeBehaviour meleeBehaviour = FindFirstObjectByType<MeleeBehaviour>();
-       playerShooting playerBaseWeapon = FindFirstObjectByType<playerShooting>();
-       //SpecialUpgradeHandler specialUpgradeHandler = FindFirstObjectByType<SpecialUpgradeHandler>();
-        
+        // MeleeBehaviour meleeBehaviour = FindFirstObjectByType<MeleeBehaviour>();
+        playerShooting playerBaseWeapon = FindFirstObjectByType<playerShooting>();
+        //SpecialUpgradeHandler specialUpgradeHandler = FindFirstObjectByType<SpecialUpgradeHandler>();
+
         if (upgrade.healthBonus != 0)
             playerHealth.hp += (int)upgrade.healthBonus;
         if (upgrade.speedBonus != 0)
             playerMovement.MoveSpeed += (int)upgrade.speedBonus;
-        if(upgrade.damageBonus != 0)
+        if (upgrade.damageBonus != 0)
             playerBaseWeapon.tankProjectilesManager.damage += (int)upgrade.damageBonus;
         if (upgrade.fireRateBonus != 0)
-            playerBaseWeapon.tankProjectilesManager.shotInterval -=(float)upgrade.fireRateBonus;
+            playerBaseWeapon.tankProjectilesManager.shotInterval -= (float)upgrade.fireRateBonus;
         if (upgrade.isSpecial && upgrade.specialItemPrefab != null)
             Instantiate(upgrade.specialItemPrefab);
         if (upgrade.isSpecial && upgrade.isExtraBarrels)
             extraBarrelsManager.extraBarrelInstance.RevealBarrel();
-            
-
-
-
-
-
-
     }
 }
