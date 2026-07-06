@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
+using Random = UnityEngine.Random;
 
 public class NewPowerUpsLocation : MonoBehaviour
 {
     public GameObject[] PowerUpPrefab;
-    
-    
+
+
     private Camera mainCam;
     public bool castPoint;
     public bool canCast;
@@ -38,13 +41,15 @@ public class NewPowerUpsLocation : MonoBehaviour
         randomMarginX = Random.Range(-45, 45);
         randomMarginY = Random.Range(-45, 45);
         randomMarginZ = Random.Range(-45, 45);
-        
-        
-        castPoint = Physics.Raycast( mainCam.transform.position + new Vector3(randomMarginX, randomMarginZ , 0), mainCam.transform.forward,
+
+
+        castPoint = Physics.Raycast(mainCam.transform.position + new Vector3(randomMarginX, randomMarginZ, 0),
+            mainCam.transform.forward,
             out raycastHit, Mathf.Infinity, terrainLayer);
 
-        Instantiate(PowerUpPrefab[Random.Range(0, PowerUpPrefab.Length)], raycastHit.point, Quaternion.identity);
-        
+      GameObject instance =  Instantiate(PowerUpPrefab[Random.Range(0, PowerUpPrefab.Length)], raycastHit.point, Quaternion.identity);
+      
+      Sequencer(instance, 12);
     }
 
     IEnumerator Sequencer()
@@ -53,5 +58,12 @@ public class NewPowerUpsLocation : MonoBehaviour
         CameraToPlane();
         yield return new WaitForSeconds(sequenceDelay);
         canCast = true;
+    }
+
+    async UniTask Sequencer( GameObject randomObject ,float aliveTime)
+    {
+        
+        await UniTask.Delay(TimeSpan.FromSeconds(aliveTime));
+        Destroy(randomObject);
     }
 }
