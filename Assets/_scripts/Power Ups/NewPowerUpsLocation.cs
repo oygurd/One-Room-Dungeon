@@ -47,9 +47,10 @@ public class NewPowerUpsLocation : MonoBehaviour
             mainCam.transform.forward,
             out raycastHit, Mathf.Infinity, terrainLayer);
 
-      GameObject instance =  Instantiate(PowerUpPrefab[Random.Range(0, PowerUpPrefab.Length)], raycastHit.point, Quaternion.identity);
-      
-      Sequencer(instance, 12);
+        GameObject instance = Instantiate(PowerUpPrefab[Random.Range(0, PowerUpPrefab.Length)], raycastHit.point,
+            Quaternion.identity);
+
+        Sequencer(instance, 12);
     }
 
     IEnumerator Sequencer()
@@ -60,9 +61,8 @@ public class NewPowerUpsLocation : MonoBehaviour
         canCast = true;
     }
 
-    async UniTask Sequencer( GameObject randomObject ,float aliveTime)
+    async UniTask Sequencer(GameObject randomObject, float aliveTime)
     {
-        
         await UniTask.Delay(TimeSpan.FromSeconds(aliveTime));
         Destroy(randomObject);
     }

@@ -13,6 +13,7 @@ public class UpgradesManager : SerializedMonoBehaviour
     [Header("UI")] public GameObject upgradeScreenUI;
     public UpgradeCardUI[] upgradeCards;
 
+    public GameObject[] UItoDisable;
     private void Awake()
     {
         instance = this;
@@ -35,12 +36,19 @@ public class UpgradesManager : SerializedMonoBehaviour
         PlayerCursorToMouse cursor = FindFirstObjectByType<PlayerCursorToMouse>();
         cursor.enabled = false;
 
+        for (int i = 0; i < UItoDisable.Length; i++)
+        {
+            UItoDisable[i].SetActive(false);
+        }
+        
+        
         List<UpgradesScriptableObject> choices = GetRandomUpgrades(3);
 
         for (int i = 0; i < upgradeCards.Length; i++)
         {
             upgradeCards[i].Setup(choices[i]);
         }
+        
     }
 
     List<UpgradesScriptableObject> GetRandomUpgrades(int count)
@@ -65,6 +73,10 @@ public class UpgradesManager : SerializedMonoBehaviour
         Cursor.visible = false;
         upgradeScreenUI.SetActive(false);
         Time.timeScale = 1;
+        for (int i = 0; i < UItoDisable.Length; i++)
+        {
+            UItoDisable[i].SetActive(true);
+        }
     }
 
     public void SelectUpgrade(UpgradesScriptableObject upgrade)

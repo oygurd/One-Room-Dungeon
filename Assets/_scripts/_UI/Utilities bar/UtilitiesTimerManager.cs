@@ -11,7 +11,7 @@ public class UtilitiesTimerManager : MonoBehaviour
     public List<Image> activeUtility = new List<Image>();
 
     public bool isTimeBased;
-    public float time;
+    public float duration;
 
 
     MeleeScriptableObject melee;
@@ -37,7 +37,7 @@ public class UtilitiesTimerManager : MonoBehaviour
         
     }
 
-    public void AddUtilityToBarUpgrade(Image upgradeIcon, int amount)
+    public void AddUtilityToBarUpgrade(Image upgradeIcon, int amount, bool isTimeBased, float duration)
     {
         for (int i = 0; i < amount; i++)
         {
