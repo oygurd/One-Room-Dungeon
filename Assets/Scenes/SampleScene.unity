@@ -2372,6 +2372,7 @@ MonoBehaviour:
   UItoDisable:
   - {fileID: 1099623758}
   - {fileID: 1666791557}
+  - {fileID: 1673319614}
 --- !u!1 &1310045500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +3966,18 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 3724533801427307543, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+    - target: {fileID: 4634268727289271962, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 7713083795784189181, guid: 9a2302ddef014a34e90572a928d30599, type: 3}
+    - target: {fileID: 4634268727289271962, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      propertyPath: poolSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4634268727289271962, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      propertyPath: tmpPrefab
+      value: 
+      objectReference: {fileID: 7713083795784189181, guid: 9a2302ddef014a34e90572a928d30599, type: 3}
     - target: {fileID: 5340574972001410942, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

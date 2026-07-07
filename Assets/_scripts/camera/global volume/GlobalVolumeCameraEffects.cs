@@ -23,7 +23,10 @@ public class GlobalVolumeCameraEffects : MonoBehaviour
         volume = FindAnyObjectByType<Volume>();
         // cameraChromaticAberration =  volume.GetComponent<ChromaticAberration>();
         defaultVolumeProfile = volume.sharedProfile;
-        cameraChromaticAberration.intensity.value = 0;
+        if (defaultVolumeProfile.TryGet(out cameraChromaticAberration))
+        {
+            cameraChromaticAberration.intensity.value = 0f;
+        }
     }
 
     #region gettingHitSection

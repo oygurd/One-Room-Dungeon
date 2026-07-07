@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+using Cysharp.Threading.Tasks;
 
 public class ProjectilesPooling : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class ProjectilesPooling : MonoBehaviour
     public int availableProjectiles;
     public List<GameObject> poolingObject = new List<GameObject>();
 
-  //  public int incrementalDeactivation; // increase when a projectile is used in order to remove it from the list based on the number
+    //  public int incrementalDeactivation; // increase when a projectile is used in order to remove it from the list based on the number
 
     public List<Rigidbody> pooledObjectsRb = new List<Rigidbody>();
     [SerializeField] private Rigidbody tmpRb;
@@ -46,38 +48,50 @@ public class ProjectilesPooling : MonoBehaviour
 
     public void AdjustPoolingSizeBasedOnDemand(GameObject tmpProjectile)
     {
-        if (availableProjectiles == 0)
+        if (availableProjectiles ==
+            0 /*|| availableProjectiles < extraBarrelsManager.extraBarrelInstance.availableBarrels*/)
         {
             for (int i = 0; i < poolSize; i++)
             {
-                tmpPrefab = Instantiate(prefab, transform.position, Quaternion.identity);
-                tmpPrefab.SetActive(false);
+                tmpProjectile = Instantiate(prefab, transform.position, Quaternion.identity);
+                tmpProjectile.SetActive(false);
                 poolingObject.Add(tmpProjectile);
-                availableProjectiles = poolingObject.Count;
-                pooledObjectsRb.Add(tmpPrefab.GetComponent<Rigidbody>());
+                pooledObjectsRb.Add(tmpProjectile.GetComponent<Rigidbody>());
             }
         }
+
+        availableProjectiles = poolingObject.Count;
     }
 
-    public void ShootingManager()
-    { 
-        GameObject shotProjectile = poolingObject[0];
-        Rigidbody shotRb = pooledObjectsRb[0];
-        
-        shotProjectile.transform.position = transform.position;
-        shotProjectile.SetActive(true);
-        shotRb = pooledObjectsRb[0];
+    public void ShootingManager(GameObject projectile, Transform barrelTransform, Rigidbody projectileRb)
+    {
+        AdjustPoolingSizeBasedOnDemand(tmpPrefab);
+
+        projectile = poolingObject[Random.Range(0, poolingObject.Count)];
+        projectileRb = pooledObjectsRb[Random.Range(0, poolingObject.Count)];
+
+        // GameObject shotProjectile = poolingObject[0];
+
+        projectileRb = projectile.GetComponent<Rigidbody>();
+
+        projectile.transform.position = barrelTransform.position;
+        projectile.transform.rotation = barrelTransform.rotation;
+        projectile.SetActive(true);
+        // shotProjectile.transform.position = transform.position;
+        // shotProjectile.SetActive(true);
+        projectileRb.linearVelocity = projectile.transform.forward * speed;
         poolingObject.RemoveAt(0);
         pooledObjectsRb.RemoveAt(0);
-        availableProjectiles = poolingObject.Count;
 
-        shotRb.linearVelocity = transform.forward * speed;
-      //  incrementalDeactivation++;
+        AdjustPoolingSizeBasedOnDemand(tmpPrefab);
+        availableProjectiles = poolingObject.Count;
+        //shotProjectile.transform.rotation = transform.rotation;
+        //  incrementalDeactivation++;
     }
 
-    public IEnumerator ResetProjectile()
+    public async UniTask ResetProjectile()
     {
-        yield return new WaitForSeconds(5);
+        await UniTask.Delay(TimeSpan.FromSeconds(5));
         GameObject resetProjectile = poolingObject[0];
         Rigidbody resetRb = pooledObjectsRb[0];
         poolingObject.Add(resetProjectile);

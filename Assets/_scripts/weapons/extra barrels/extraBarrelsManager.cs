@@ -7,6 +7,8 @@ public class extraBarrelsManager : SerializedMonoBehaviour
     public GameObject[] barrels;
     public GameObject[] barrelTips;
 
+    public int availableBarrels;
+
     private int i;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +27,7 @@ public class extraBarrelsManager : SerializedMonoBehaviour
         if (i != barrelTips.Length) // limit 'i' to the number of extra barrels possible
         {
             barrels[i].SetActive(true);
+            availableBarrels++;
             i++;
         }
     }

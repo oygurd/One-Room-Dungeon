@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Cysharp.Threading.Tasks;
 
 public class ExtraBarrelProjectile : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class ExtraBarrelProjectile : MonoBehaviour
     public int damage;
     public float speed;
 
-    private GameObject projectile;
-    private Rigidbody rb;
+    public GameObject projectile;
+    public Rigidbody rb;
 
     private void Awake()
     {
@@ -29,21 +30,21 @@ public class ExtraBarrelProjectile : MonoBehaviour
     {
         if (canShoot)
         {
-            StartCoroutine(ShootingSequencer());
+           ShootingSequencer();
             canShoot = false;
         }
     }
 
     public void Shoot()
     {
-        ProjectilesPooling.projectilesPoolingInstance.ShootingManager();
+        ProjectilesPooling.projectilesPoolingInstance.ShootingManager(projectile, transform, rb);
     }
 
-    IEnumerator ShootingSequencer()
+    async UniTask ShootingSequencer()
     {
         Shoot();
-        ProjectilesPooling.projectilesPoolingInstance.StartCoroutine(ProjectilesPooling.projectilesPoolingInstance.ResetProjectile());
-        yield return new WaitForSeconds(shootingInterval);
+        ProjectilesPooling.projectilesPoolingInstance.ResetProjectile();
+        await UniTask.Delay(TimeSpan.FromSeconds(shootingInterval));
         canShoot = true;
     }
     
