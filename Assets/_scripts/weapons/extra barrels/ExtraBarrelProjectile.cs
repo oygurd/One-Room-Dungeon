@@ -12,7 +12,8 @@ public class ExtraBarrelProjectile : MonoBehaviour
     public float shootingInterval;
     public int damage;
     public float speed;
-
+    public int projectilePositionInList;
+    
     public GameObject projectile;
     public Rigidbody rb;
 
@@ -30,14 +31,15 @@ public class ExtraBarrelProjectile : MonoBehaviour
     {
         if (canShoot)
         {
-           ShootingSequencer();
+            Debug.Log("I can shooto!");
             canShoot = false;
+           ShootingSequencer();
         }
     }
 
     public void Shoot()
     {
-        ProjectilesPooling.projectilesPoolingInstance.ShootingManager(projectile, transform, rb);
+        ProjectilesPooling.projectilesPoolingInstance.ShootingManager(projectile, transform, rb,projectilePositionInList);
     }
 
     async UniTask ShootingSequencer()

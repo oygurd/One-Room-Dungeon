@@ -21,9 +21,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  defaultVal: {fileID: 0}
   prefab: {fileID: 8434374953861157239, guid: 4ecd5588e4426f34b9237b529efe63d0, type: 3}
   name: Extra Barrel
   damage: 1
   speed: 10
-  shotInterval: 3
+  shotInterval: 1
   description: 
