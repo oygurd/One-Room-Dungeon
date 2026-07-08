@@ -17,6 +17,7 @@ public class ExtraBarrelProjectile : MonoBehaviour
     public GameObject projectile;
     public Rigidbody rb;
 
+    private Transform self;
     private void Awake()
     {
         shootingInterval = projectilesManager.shotInterval;
@@ -25,6 +26,7 @@ public class ExtraBarrelProjectile : MonoBehaviour
         canShoot = true;
 
         projectile = ProjectilesPooling.projectilesPoolingInstance.prefab;
+        self = transform;
     }
 
     private void Update()
@@ -39,7 +41,7 @@ public class ExtraBarrelProjectile : MonoBehaviour
 
     public void Shoot()
     {
-        ProjectilesPooling.projectilesPoolingInstance.ShootingManager(projectile, transform, rb,projectilePositionInList);
+        ProjectilesPooling.projectilesPoolingInstance.ShootingManager(projectile, self, rb,projectilePositionInList);
     }
 
     async UniTask ShootingSequencer()

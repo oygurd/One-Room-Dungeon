@@ -77,6 +77,9 @@ public class ProjectilesPooling : MonoBehaviour
     {
         projectile = poolingObject[positionInList];
         projectileRb = pooledObjectsRb[positionInList];
+        projectileRb.transform.position = barrelTransform.position;
+        projectile.transform.rotation = barrelTransform.rotation;
+
         projectile.SetActive(true);
         // GameObject shotProjectile = poolingObject[0];
 
@@ -87,11 +90,12 @@ public class ProjectilesPooling : MonoBehaviour
         //projectile.SetActive(true);
         // shotProjectile.transform.position = transform.position;
         // shotProjectile.SetActive(true);
-        projectileRb.linearVelocity = projectile.transform.forward * speed;
+        projectileRb.linearVelocity = barrelTransform.transform.forward * speed;
         poolingObject.RemoveAt(positionInList);
         pooledObjectsRb.RemoveAt(positionInList);
-
-        parentFind = barrelTransform;
+        
+       // Debug.Log("my parent is" + projectile);
+        
        // AdjustPoolingSizeBasedOnDemand(tmpPrefab);
         availableProjectiles = poolingObject.Count;
         //shotProjectile.transform.rotation = transform.rotation;
