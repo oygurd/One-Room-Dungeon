@@ -25,7 +25,7 @@ public class ExtraBarrelProjectile : MonoBehaviour
         speed = projectilesManager.speed;
         canShoot = true;
 
-        projectile = ProjectilesPooling.projectilesPoolingInstance.prefab;
+        projectile = ProjectilesPooling.projectilesPoolingInstance.poolingObject[0];
         self = transform;
     }
 
@@ -35,21 +35,33 @@ public class ExtraBarrelProjectile : MonoBehaviour
         {
             Debug.Log("I can shooto!");
             canShoot = false;
-           ShootingSequencer();
+           //ShootingSequencer();
+           StartCoroutine(ShootingSequencerFix());
         }
     }
 
     public void Shoot()
     {
         ProjectilesPooling.projectilesPoolingInstance.ShootingManager(projectile, self, rb,projectilePositionInList);
+       /*var (firedProjectile, firedRb) = ProjectilesPooling.projectilesPoolingInstance.ShootingManagerFixed(self);
+       ProjectilesPooling.projectilesPoolingInstance.StartCoroutine(ProjectilesPooling.projectilesPoolingInstance.ResetProjectile(firedProjectile, self, firedRb));*/
     }
 
     async UniTask ShootingSequencer()
     {
         Shoot();
-        ProjectilesPooling.projectilesPoolingInstance.ResetProjectile();
+        ProjectilesPooling.projectilesPoolingInstance.StartCoroutine(
+            ProjectilesPooling.projectilesPoolingInstance.ResetProjectile(projectile, self, rb));
         await UniTask.Delay(TimeSpan.FromSeconds(shootingInterval));
         canShoot = true;
     }
-    
+
+    IEnumerator ShootingSequencerFix()
+    {
+        Shoot();
+        /*ProjectilesPooling.projectilesPoolingInstance.StartCoroutine(
+            ProjectilesPooling.projectilesPoolingInstance.ResetProjectile(projectile, self, rb));*/
+        yield return new WaitForSeconds(shootingInterval);
+        canShoot = true;
+    }
 }

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4474833459808144980}
   - component: {fileID: 9050829075714573655}
   - component: {fileID: 5131773203894044605}
-  - component: {fileID: 6358069067360889283}
+  - component: {fileID: 2632563993424097979}
   m_Layer: 0
   m_Name: extra barrel projectile holder
-  m_TagString: Player
+  m_TagString: TankShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7713083795784189181}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5008364, y: 5.071924, z: -14.640226}
+  m_LocalPosition: {x: 10.2149315, y: 2.1480005, z: -1.5684925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -83,7 +83,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &6358069067360889283
+--- !u!114 &2632563993424097979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,10 +92,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7713083795784189181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e8f57edd3e3e5429698c072c77ebd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 90a258b1df14a024bb786c9d0c3f82ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankProjectilesManager: {fileID: 11400000, guid: 755ada6c953aa4746950f53d3d4661e0, type: 2}
+  tankProjectilesManager: {fileID: 11400000, guid: ae6ae78c961b36349a3bbdcbb574654b, type: 2}
 --- !u!1001 &8348003183665959360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144,6 +144,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cbbe1ae4962054546b4dad2f02136ad3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 048104758497b974a90b5f64c3c9cbb7, type: 2}
     - target: {fileID: 919132149155446097, guid: cbbe1ae4962054546b4dad2f02136ad3, type: 3}
       propertyPath: m_Name
       value: newTankProjectile

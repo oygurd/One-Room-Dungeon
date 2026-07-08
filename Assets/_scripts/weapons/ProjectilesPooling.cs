@@ -26,7 +26,7 @@ public class ProjectilesPooling : MonoBehaviour
 
     public float speed;
 
-    
+
     public Transform parentFind;
 
     private void Awake()
@@ -48,13 +48,12 @@ public class ProjectilesPooling : MonoBehaviour
 
     private void Update()
     {
-         // AdjustPoolingSizeBasedOnDemand(tmpPrefab);
+      //  AdjustPoolingSizeBasedOnDemand(tmpPrefab);
     }
 
     public void AdjustPoolingSizeBasedOnDemand(GameObject tmpProjectile)
     {
-        if (availableProjectiles ==
-            5 /*|| availableProjectiles < extraBarrelsManager.extraBarrelInstance.availableBarrels*/)
+        if (availableProjectiles <= 16)
         {
             for (int i = 0; i < poolSize; i++)
             {
@@ -73,7 +72,8 @@ public class ProjectilesPooling : MonoBehaviour
         availableProjectiles = poolingObject.Count;
     }
 
-    public void ShootingManager(GameObject projectile, Transform barrelTransform, Rigidbody projectileRb, int positionInList)
+    public void ShootingManager(GameObject projectile, Transform barrelTransform, Rigidbody projectileRb,
+        int positionInList)
     {
         projectile = poolingObject[positionInList];
         projectileRb = pooledObjectsRb[positionInList];
@@ -81,36 +81,49 @@ public class ProjectilesPooling : MonoBehaviour
         projectile.transform.rotation = barrelTransform.rotation;
 
         projectile.SetActive(true);
-        // GameObject shotProjectile = poolingObject[0];
 
         projectileRb = projectile.GetComponent<Rigidbody>();
-    
+
         projectile.transform.position = barrelTransform.position;
         projectile.transform.rotation = barrelTransform.rotation;
-        //projectile.SetActive(true);
-        // shotProjectile.transform.position = transform.position;
-        // shotProjectile.SetActive(true);
+
         projectileRb.linearVelocity = barrelTransform.transform.forward * speed;
         poolingObject.RemoveAt(positionInList);
         pooledObjectsRb.RemoveAt(positionInList);
-        
-       // Debug.Log("my parent is" + projectile);
-        
-       // AdjustPoolingSizeBasedOnDemand(tmpPrefab);
+
+        StartCoroutine(ResetProjectile(projectile, barrelTransform, projectileRb));
+
         availableProjectiles = poolingObject.Count;
-        //shotProjectile.transform.rotation = transform.rotation;
-        //  incrementalDeactivation++;
     }
 
-    public async UniTask ResetProjectile()
+    public (GameObject, Rigidbody) ShootingManagerFixed(Transform barrelTransform) // no use but keep it to learn from
     {
-        await UniTask.Delay(TimeSpan.FromSeconds(5));
-        GameObject resetProjectile = poolingObject[0];
-        Rigidbody resetRb = pooledObjectsRb[0];
-        poolingObject.Add(resetProjectile);
-        pooledObjectsRb.Add(resetRb);
-        resetProjectile.SetActive(false);
-        resetProjectile.transform.position = transform.position;
+        int index = poolingObject.Count - 1;
+        GameObject projectile = poolingObject[index];
+        Rigidbody projectileRb = pooledObjectsRb[index];
+
+        projectileRb.transform.position = barrelTransform.position;
+        projectile.transform.position = barrelTransform.position;
+        projectile.transform.rotation = barrelTransform.rotation;
+
+        projectile.SetActive(true);
+        projectileRb.linearVelocity = barrelTransform.transform.forward * speed;
+
+        poolingObject.RemoveAt(index);
+        pooledObjectsRb.RemoveAt(index);
         availableProjectiles = poolingObject.Count;
+
+        return (projectile, projectileRb);
+    }
+
+    public IEnumerator ResetProjectile(GameObject projectile, Transform barrelTransform, Rigidbody projectileRb)
+    {
+        yield return new WaitForSeconds(5);
+        poolingObject.Add(projectile);
+        pooledObjectsRb.Add(projectileRb);
+        projectile.SetActive(false);
+        projectile.transform.position = barrelTransform.position;
+        availableProjectiles = poolingObject.Count;
+        // StopCoroutine(ResetProjectile(projectile, barrelTransform, projectileRb));
     }
 }
