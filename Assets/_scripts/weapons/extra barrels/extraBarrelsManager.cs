@@ -16,18 +16,11 @@ public class extraBarrelsManager : SerializedMonoBehaviour
     {
         extraBarrelInstance = this;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void RevealBarrel()
     {
         if (i != barrelTips.Length) // limit 'i' to the number of extra barrels possible
         {
             barrels[i].SetActive(true);
-            availableBarrels++;
             i++;
         }
     }

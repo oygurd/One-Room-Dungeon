@@ -13812,9 +13812,13 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3724533801427307543, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      propertyPath: availableBarrels
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724533801427307543, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 3724533801427307543, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3774322515541909483, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
       propertyPath: rb
       value: 

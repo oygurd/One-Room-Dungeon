@@ -8,12 +8,13 @@ public class UpgradesManager : SerializedMonoBehaviour
 {
     public static UpgradesManager instance { get; private set; }
 
-    [Header("All Upgrades")] public UpgradesScriptableObject[] allUpgrades;
+    [Header("All Upgrades")] public List<UpgradesScriptableObject> allUpgrades = new List<UpgradesScriptableObject>();
 
     [Header("UI")] public GameObject upgradeScreenUI;
     public UpgradeCardUI[] upgradeCards;
 
     public GameObject[] UItoDisable;
+
     private void Awake()
     {
         instance = this;
@@ -29,6 +30,12 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     public void ShowUpgradeScreen()
     {
+        if (extraBarrelsManager.extraBarrelInstance.availableBarrels == 0)
+        {
+            allUpgrades.RemoveAt(6);
+            return;
+        }
+        
         Time.timeScale = 0;
         upgradeScreenUI.SetActive(true);
 
@@ -40,19 +47,22 @@ public class UpgradesManager : SerializedMonoBehaviour
         {
             UItoDisable[i].SetActive(false);
         }
-        
-        
+
+
         List<UpgradesScriptableObject> choices = GetRandomUpgrades(3);
 
         for (int i = 0; i < upgradeCards.Length; i++)
         {
             upgradeCards[i].Setup(choices[i]);
         }
-        
     }
 
     List<UpgradesScriptableObject> GetRandomUpgrades(int count)
     {
+        if (extraBarrelsManager.extraBarrelInstance.availableBarrels == 0)
+        {
+         allUpgrades.RemoveAt(6);
+        }
         List<UpgradesScriptableObject> pool = new List<UpgradesScriptableObject>(allUpgrades);
         List<UpgradesScriptableObject> choices = new List<UpgradesScriptableObject>();
 
@@ -61,6 +71,7 @@ public class UpgradesManager : SerializedMonoBehaviour
             int index = Random.Range(0, pool.Count);
             choices.Add(pool[index]);
             pool.RemoveAt(index); //no duplicates
+            
         }
 
         return choices;
@@ -105,6 +116,13 @@ public class UpgradesManager : SerializedMonoBehaviour
         if (upgrade.isSpecial && upgrade.specialItemPrefab != null)
             Instantiate(upgrade.specialItemPrefab);
         if (upgrade.isSpecial && upgrade.isExtraBarrels)
+        {
             extraBarrelsManager.extraBarrelInstance.RevealBarrel();
+            extraBarrelsManager.extraBarrelInstance.availableBarrels -= 1;
+            if (extraBarrelsManager.extraBarrelInstance.availableBarrels == 0)
+            {
+                allUpgrades.RemoveAt(6);
+            }
+        }
     }
 }
