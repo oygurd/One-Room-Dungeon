@@ -18,6 +18,8 @@ public class UpgradesScriptableObject : SerializedScriptableObject
     public float fireRateBonus;
     public bool hasDuration;
     public float Duration;
+
+    public int numberOfUses;
     
     [Header("Specials")]
     public bool isSpecial;
