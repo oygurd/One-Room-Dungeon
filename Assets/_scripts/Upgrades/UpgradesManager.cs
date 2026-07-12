@@ -10,6 +10,8 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     [Header("All Upgrades")] public List<UpgradesScriptableObject> allUpgrades = new List<UpgradesScriptableObject>();
 
+    public Dictionary<UpgradesScriptableObject, int> allUpgradesDic = new Dictionary<UpgradesScriptableObject, int>();
+
     [Header("UI")] public GameObject upgradeScreenUI;
     public UpgradeCardUI[] upgradeCards;
 
@@ -30,12 +32,7 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     public void ShowUpgradeScreen()
     {
-        if (extraBarrelsManager.extraBarrelInstance.availableBarrels == 0)
-        {
-            allUpgrades.RemoveAt(6);
-            return;
-        }
-        
+
         Time.timeScale = 0;
         upgradeScreenUI.SetActive(true);
 
@@ -59,19 +56,30 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     List<UpgradesScriptableObject> GetRandomUpgrades(int count)
     {
-        if (extraBarrelsManager.extraBarrelInstance.availableBarrels == 0)
-        {
-         allUpgrades.RemoveAt(6);
-        }
         List<UpgradesScriptableObject> pool = new List<UpgradesScriptableObject>(allUpgrades);
         List<UpgradesScriptableObject> choices = new List<UpgradesScriptableObject>();
+        
+        List<string> chosenName = new List<string>();
 
+         //Dictionary<UpgradesScriptableObject, int> pooldic = new Dictionary<UpgradesScriptableObject, int>();
+        //var keys = new List<UpgradesScriptableObject>(pool.Keys);
+       
         for (int i = 0; i < count; i++)
         {
-            int index = Random.Range(0, pool.Count);
+            var index = Random.Range(0, pool.Count);
             choices.Add(pool[index]);
             pool.RemoveAt(index); //no duplicates
+           // chosenName.Add(pool[index].upgradeName);
             
+           
+        }
+        if (extraBarrelsManager.extraBarrelInstance.availableBarrels == 0) //get rid of the extra barrels card when all 8 are used
+        {
+            if (chosenName.Contains("Extra barrel"))
+            {
+                int pos = chosenName.IndexOf("Extra barrel");
+                choices.RemoveAt(pos);
+            }
         }
 
         return choices;
