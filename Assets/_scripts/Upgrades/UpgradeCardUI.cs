@@ -42,7 +42,7 @@
             selectButton.onClick.RemoveAllListeners();
             selectButton.onClick.AddListener(() => UpgradesManager.instance.SelectUpgrade(currentUpgrade));
             if (upgrade.upgradeIcon != null)
-                 selectButton.onClick.AddListener(() => UtilitiesTimerManager.instance.AddUtilityToBarUpgrade(icon, 1,upgrade.hasDuration,upgrade.Duration));
+                 selectButton.onClick.AddListener(() => UtilitiesTimerManager.instance.AddUtilityToBarUpgrade(icon, 1,upgrade.hasDuration,upgrade.Duration, upgrade.upgradeName));
             
 
         }

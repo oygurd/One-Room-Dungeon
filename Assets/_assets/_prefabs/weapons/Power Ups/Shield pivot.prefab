@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  shields: []
+  shieldsRemain: 0
   meleeScriptForTime: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
 --- !u!1001 &1677111820516126336
 PrefabInstance:
@@ -184,6 +184,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  shieldPivotBehaviour: {fileID: 1894464478591621987}
   damage: 0
   health: 0
   knockback: 0
@@ -320,6 +321,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  shieldPivotBehaviour: {fileID: 1894464478591621987}
   damage: 0
   health: 0
   knockback: 0
@@ -451,6 +453,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  shieldPivotBehaviour: {fileID: 1894464478591621987}
   damage: 0
   health: 0
   knockback: 0
@@ -592,6 +595,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   meleeScript: {fileID: 11400000, guid: 76330088393208a46bd1c12cb710a463, type: 2}
+  shieldPivotBehaviour: {fileID: 1894464478591621987}
   damage: 0
   health: 0
   knockback: 0

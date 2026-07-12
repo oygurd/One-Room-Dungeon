@@ -123,7 +123,8 @@ public class UpgradesManager : SerializedMonoBehaviour
             playerBaseWeapon.tankProjectilesManager.shotInterval -= (float)upgrade.fireRateBonus;
         if (upgrade.isSpecial && upgrade.specialItemPrefab != null)
             Instantiate(upgrade.specialItemPrefab);
-        if (upgrade.isSpecial && upgrade.isExtraBarrels)
+        
+        if (upgrade.isSpecial && upgrade.isExtraBarrels)//add a new barrel
         {
             extraBarrelsManager.extraBarrelInstance.RevealBarrel();
             extraBarrelsManager.extraBarrelInstance.availableBarrels -= 1;
@@ -131,6 +132,11 @@ public class UpgradesManager : SerializedMonoBehaviour
             {
                 allUpgrades.RemoveAt(6);
             }
+        }
+
+        if (upgrade.isSpecial && upgrade.isJumpAbility) // enable the ability to jump
+        {
+            
         }
     }
 }
