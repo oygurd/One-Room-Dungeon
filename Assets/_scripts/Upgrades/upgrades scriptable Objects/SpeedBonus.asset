@@ -23,12 +23,15 @@ MonoBehaviour:
     SerializationNodes: []
   upgradeName: Extra Base Speed
   upgradeDescription: Increase your base speed stat
-  upgradeBackGround: {fileID: -308390161, guid: c967a2fe7d9bddf45953710ff3ffc603, type: 3}
+  upgradeBackGround: {fileID: -1281361572, guid: 975607629584b9447a748b3f84582383, type: 3}
   upgradeIcon: {fileID: 0}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 3
   fireRateBonus: 0
+  hasDuration: 0
+  Duration: 0
+  numberOfUses: 0
   isSpecial: 0
   specialItemPrefab: {fileID: 0}
   isExtraBarrels: 0
