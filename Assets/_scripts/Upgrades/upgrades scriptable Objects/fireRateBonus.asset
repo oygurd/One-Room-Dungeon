@@ -28,10 +28,12 @@ MonoBehaviour:
   damageBonus: 0
   healthBonus: 0
   speedBonus: 0
-  fireRateBonus: 0.02
+  fireRateBonus: 0.04
   hasDuration: 0
   Duration: 0
   numberOfUses: 0
   isSpecial: 0
   specialItemPrefab: {fileID: 0}
   isExtraBarrels: 0
+  isJumpAbility: 0
+  isLandMines: 0

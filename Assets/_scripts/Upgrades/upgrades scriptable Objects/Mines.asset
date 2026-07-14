@@ -24,7 +24,7 @@ MonoBehaviour:
   upgradeName: Minefield
   upgradeDescription: Spawn mines at your position every few seconds
   upgradeBackGround: {fileID: -1281361572, guid: 975607629584b9447a748b3f84582383, type: 3}
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: -868189089, guid: e18267b1b2cb68644b10ca54ec32e3a2, type: 3}
   damageBonus: 0
   healthBonus: 0
   speedBonus: 0

@@ -7,7 +7,7 @@ using Cysharp.Threading.Tasks;
 
 public class CameraShakeManager : MonoBehaviour
 {
-    public static  CameraShakeManager instance;
+    public static CameraShakeManager instance;
     private Camera mainCam;
     private CinemachineCamera cineCam;
     private CinemachineBasicMultiChannelPerlin cameraShake;
@@ -19,18 +19,11 @@ public class CameraShakeManager : MonoBehaviour
         cameraShake = GetComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public async UniTask CamShaker(float strength)
     {
-        
-    }
-
-    public async UniTask CamShaker()
-    {
-        cameraShake.enabled = true; 
+        cameraShake.enabled = true;
+        cameraShake.AmplitudeGain = strength;
         await UniTask.Delay(TimeSpan.FromSeconds(0.3f));
         cameraShake.enabled = false;
     }
-    
-    
 }

@@ -8,9 +8,13 @@ public class MineBehaviour : MonoBehaviour
 
     private Ray ray;
 
+    public ParticleSystem explosion;
+    public MeshRenderer mesh;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -28,9 +32,11 @@ public class MineBehaviour : MonoBehaviour
             {
                 enemyCol.TryGetComponent(out EnemyAttackBehaviour enemy);
                 enemy.enemyHp -= 3;
-
             }
-            Destroy(gameObject);
+            CameraShakeManager.instance.CamShaker(5);
+            explosion.Play();
+            mesh.enabled = false;
+            Destroy(gameObject,2.3f);
         }
     }
 }

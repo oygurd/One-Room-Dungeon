@@ -25,16 +25,18 @@ MonoBehaviour:
   upgradeDescription: 'Increase all of your stasts by 1!
 
     (Fire rate bonus increased
-    by 0.05)'
+    by 0.07)'
   upgradeBackGround: {fileID: -1281361572, guid: 975607629584b9447a748b3f84582383, type: 3}
   upgradeIcon: {fileID: 0}
   damageBonus: 1
   healthBonus: 1
   speedBonus: 1
-  fireRateBonus: 0.05
+  fireRateBonus: 0.07
   hasDuration: 0
   Duration: 0
   numberOfUses: 0
   isSpecial: 0
   specialItemPrefab: {fileID: 0}
   isExtraBarrels: 0
+  isJumpAbility: 0
+  isLandMines: 0
