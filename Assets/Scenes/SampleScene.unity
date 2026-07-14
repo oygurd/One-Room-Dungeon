@@ -2477,6 +2477,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f20575b0e3a392447b64d30746a395d2, type: 2}
   - {fileID: 11400000, guid: 40f8d547d65cf424d8ddc8e33fafabf9, type: 2}
   - {fileID: 11400000, guid: cdd20a8df1d089b46b0fc9cf28973628, type: 2}
+  - {fileID: 11400000, guid: 90a22b9cfde59004b9b38bfa971a4643, type: 2}
   upgradeScreenUI: {fileID: 2004936178}
   upgradeCards:
   - {fileID: 1643578830}
@@ -2920,6 +2921,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1477918382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477918383}
+  - component: {fileID: 1477918384}
+  m_Layer: 9
+  m_Name: MineManagerHolder - disable when playing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1477918383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477918382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.956, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 155544854}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1477918384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477918382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd66bff7fb317e4e95948a8bf4d28fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minesPrefab: {fileID: 1969843239403458197, guid: f4bc81d5b5e478e4b913285f0c9892f1, type: 3}
+  canSpawn: 1
 --- !u!1 &1492937931
 GameObject:
   m_ObjectHideFlags: 0
@@ -4278,7 +4325,10 @@ PrefabInstance:
       objectReference: {fileID: 8183439031140758904, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5340574972001410942, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1477918383}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
 --- !u!1660057539 &9223372036854775807

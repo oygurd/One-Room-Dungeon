@@ -9,6 +9,7 @@ TagManager:
   - Lure
   - TankShot
   - enemyProjectile
+  - mine
   layers:
   - Default
   - TransparentFX

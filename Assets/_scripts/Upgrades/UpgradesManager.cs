@@ -138,5 +138,11 @@ public class UpgradesManager : SerializedMonoBehaviour
         {
             
         }
+
+        if (upgrade.isSpecial && upgrade.isLandMines)
+        {
+            upgrade.specialItemPrefab.SetActive(true);
+            allUpgrades.RemoveAt(7);
+        }
     }
 }
