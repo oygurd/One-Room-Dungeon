@@ -4901,6 +4901,7 @@ MonoBehaviour:
   rangeFromPlayer: 0
   shootingLaser: 0
   movementStop: 0
+  canLookForPlayer: 0
   player: {fileID: 0}
   selectedLaserEnemy: {fileID: 0}
   laserShooter: {fileID: 3713645717720017594}
@@ -5400,7 +5401,7 @@ PrefabInstance:
     - target: {fileID: -1526964690268444965, guid: 39f69323c9cbbd54c8588920fdcf70b3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a485777216deb724bbced9c83aa31778, type: 2}
+      objectReference: {fileID: -876546973899608171, guid: 7512d6e73688ab24f9bd60c1a09dfa8e, type: 3}
     - target: {fileID: -813063648934482108, guid: 39f69323c9cbbd54c8588920fdcf70b3, type: 3}
       propertyPath: m_Name
       value: Core holder
