@@ -67,28 +67,25 @@ public class abilitiesActions : MonoBehaviour
         {
             Vector3 mousepos = ray.GetPoint(distance);
 
-            droppedMortar.transform.DOShakeRotation(3, new Vector3(1, 1, 1), 1, 90);
-            droppedMortar.transform.DOMove(mousepos, 3).SetEase(Ease.InExpo);
-            //droppedMortar.transform.DOScale(0.5f, 3).SetEase(Ease.OutExpo);
+            //droppedMortar.transform.DOShakeRotation(3, new Vector3(1, 1, 1), 1, 90);
+            droppedMortar.transform.DOMove(mousepos, 2).SetEase(Ease.InExpo);
+            droppedMortar.transform.DOScale(0.7f, 3).SetEase(Ease.OutExpo);
             
         }
-
-        Cooldown();
-
+        Cooldown(10);
     }
 
-   public async UniTask Cooldown()
+   public async UniTask Cooldown(float duration)
    {
        buttonCanBeUsed = false;
-       cooldownNumber = 0;
+       cooldownNumber = 0.0f;
        icon.fillAmount = cooldownNumber;
-       await UniTask.Delay(TimeSpan.FromSeconds(10));
+       await UniTask.Delay(TimeSpan.FromSeconds(duration));
        buttonCanBeUsed = true;
    }
 
    public void CooldownIconFill()
    {
-       
       cooldownNumber += Time.deltaTime;
        icon.fillAmount = Mathf.Clamp01(cooldownNumber / 10);
    }

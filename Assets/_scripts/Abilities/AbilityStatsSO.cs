@@ -9,5 +9,5 @@ public class AbilityStatsSO : ScriptableObject
     public Sprite abilityIcon;
     public GameObject abilityPrefab;
     //public string abilityButton;
-    public float abilityDamage;
+    public int abilityDamage;
 }

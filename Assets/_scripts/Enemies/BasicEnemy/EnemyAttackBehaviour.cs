@@ -27,7 +27,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
             // WavesManager.Instance.OnEnemyDied(gameObject);
             death.gameObject.transform.SetParent(null);
             death.Play();
-            gameObject.SetActive(false); ;
+            gameObject.SetActive(false);
             Destroy(gameObject, 1);
         }
     }
