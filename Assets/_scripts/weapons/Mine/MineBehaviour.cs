@@ -33,7 +33,7 @@ public class MineBehaviour : MonoBehaviour
                 enemyCol.TryGetComponent(out EnemyAttackBehaviour enemy);
                 enemy.enemyHp -= 3;
             }
-            CameraShakeManager.instance.CamShaker(5);
+            CameraShakeManager.instance.CamShaker(5,0.3f);
             explosion.Play();
             mesh.enabled = false;
             Destroy(gameObject,2.3f);

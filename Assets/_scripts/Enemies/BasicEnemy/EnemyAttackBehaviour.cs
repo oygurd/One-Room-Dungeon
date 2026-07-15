@@ -7,7 +7,9 @@ public class EnemyAttackBehaviour : MonoBehaviour
 {
     public int enemyHp;
     public Rigidbody enemyRb;
-    
+
+    public ParticleSystem death;
+
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
@@ -22,9 +24,11 @@ public class EnemyAttackBehaviour : MonoBehaviour
     {
         if (enemyHp <= 0)
         {
-           // WavesManager.Instance.OnEnemyDied(gameObject);
-            Destroy(gameObject);
-                
+            // WavesManager.Instance.OnEnemyDied(gameObject);
+            death.gameObject.transform.SetParent(null);
+            death.Play();
+            gameObject.SetActive(false); ;
+            Destroy(gameObject, 1);
         }
     }
 
@@ -37,13 +41,13 @@ public class EnemyAttackBehaviour : MonoBehaviour
             {
                 playerHealth.LowerHp(); // lower PLAYER hp
             }
-            
-            enemyHp --;
+
+            enemyHp--;
             /*if (enemyHp <= 0)
             {
                 WavesManager.Instance.OnEnemyDied(gameObject);
                 Destroy(gameObject);
-                
+
             }*/
         }
     }

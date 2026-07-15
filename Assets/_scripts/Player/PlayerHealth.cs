@@ -48,6 +48,6 @@ public class PlayerHealth : MonoBehaviour
 
         // StartCoroutine(GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHitSequence());
         GlobalVolumeCameraEffects.globalVolumeCameraEffectsInstance.GettingHitSequence();
-        CameraShakeManager.instance.CamShaker(3);
+        CameraShakeManager.instance.CamShaker(3,0.2f);
     }
 }

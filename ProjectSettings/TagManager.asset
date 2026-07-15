@@ -10,6 +10,8 @@ TagManager:
   - TankShot
   - enemyProjectile
   - mine
+  - mortar
+  - Terrain
   layers:
   - Default
   - TransparentFX
