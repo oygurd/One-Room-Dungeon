@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 1
   enemyRb: {fileID: 0}
+  death: {fileID: 8234682606799140053, guid: 42ddd84a6a6b94b498a7c679a7743596, type: 3}
   projectilePrefab: {fileID: 1574884037063881440, guid: c4cf6a4136c441c4caa9892ceb328ecb, type: 3}
   shootInterval: 2
   shootRange: 15

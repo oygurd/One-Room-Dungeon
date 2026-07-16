@@ -4941,6 +4941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHp: 3
   enemyRb: {fileID: 0}
+  death: {fileID: 8234682606799140053, guid: 42ddd84a6a6b94b498a7c679a7743596, type: 3}
 --- !u!1 &2383426923353118926
 GameObject:
   m_ObjectHideFlags: 0
