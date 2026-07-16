@@ -37,12 +37,7 @@ public class mortarAbility : MonoBehaviour
 
             meshRenderer.enabled = false;
 
-            Collider[] explosionArea = Physics.OverlapSphere(transform.position, 9, enemyLayer);
-            foreach (var enemies in explosionArea)
-            {
-                enemies.TryGetComponent(out EnemyAttackBehaviour enemy);
-                enemy.enemyHp -= abilityStats.abilityDamage;
-            }
+           
             Destroy(gameObject, 5);
         }
     }
@@ -72,8 +67,18 @@ public class mortarAbility : MonoBehaviour
         CameraShakeManager.instance.CamShaker(6, 1);
 
         Time.timeScale = 1;
+        DamageArea();
     }
 
+    public void DamageArea()
+    {
+        Collider[] explosionArea = Physics.OverlapSphere(transform.position, 9, enemyLayer);
+        foreach (var enemies in explosionArea)
+        {
+            enemies.TryGetComponent(out EnemyAttackBehaviour enemy);
+            enemy.enemyHp -= abilityStats.abilityDamage;
+        }
+    }
 
     public void Explode()
     {
