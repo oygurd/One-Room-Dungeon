@@ -32,10 +32,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void LowerHp()
+    public void LowerHp(int damageTaken)
     {
         //  hp = Mathf.Lerp(hp, hp -1, 0.5f);
-        hp -= 1;
+        hp -= damageTaken;
         //  hpBar.fillAmount = Mathf.Lerp(hp, hp -1, 0.5f);
 
         float fill = Mathf.Clamp01(hp / maxHp);

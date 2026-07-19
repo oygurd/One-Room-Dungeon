@@ -77,7 +77,7 @@ public class RangedEnemyBehaviourManager : EnemyAttackBehaviour
             // Die();
             if (collision.TryGetComponent(out PlayerHealth playerHealth))
             {
-                playerHealth.LowerHp(); // lower PLAYER hp
+                playerHealth.LowerHp(1); // lower PLAYER hp
             }
             
             enemyHp --;

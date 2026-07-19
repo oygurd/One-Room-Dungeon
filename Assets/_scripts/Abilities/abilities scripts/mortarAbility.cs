@@ -25,21 +25,28 @@ public class mortarAbility : MonoBehaviour
     void Update()
     {
         contact = Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 0.5f, terrainLayer);
-        //contact = Physics.BoxCast(transform.position, -Vector3.up, Vector3.down, transform.localRotation, 0.5f, terrainLayer);
-        if (contact)
+
+        Vector3 explosionHeight = new Vector3(transform.position.x, 0, transform.position.z);
+        if (transform.position.y <= explosionHeight.y && !hasExploded)
         {
-            //hasExploded = true;
-            initialSpark.Play();
-            //TimeStopStrongEffect().Forget();
-            StartCoroutine(TimeStop());
-            Blast.Play();
-            CameraShakeManager.instance.ZoomLerpIn(1);
-
-            meshRenderer.enabled = false;
-
-           
-            Destroy(gameObject, 5);
+            contact = true;
+            hasExploded = true;
         }
+            //contact = Physics.BoxCast(transform.position, -Vector3.up, Vector3.down, transform.localRotation, 0.5f, terrainLayer);
+            if (contact)
+            {
+                //hasExploded = true;
+                initialSpark.Play();
+                //TimeStopStrongEffect().Forget();
+                StartCoroutine(TimeStop());
+                Blast.Play();
+                CameraShakeManager.instance.ZoomLerpIn(1);
+
+                meshRenderer.enabled = false;
+
+
+                Destroy(gameObject, 5);
+            }
     }
 
     private CancellationTokenSource timeStopCts;

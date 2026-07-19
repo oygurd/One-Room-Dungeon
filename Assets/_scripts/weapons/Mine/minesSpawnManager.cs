@@ -27,7 +27,7 @@ public class minesSpawnManager : MonoBehaviour
     async UniTask SpawnMines()
     {
         canSpawn = false;
-        await UniTask.Delay(TimeSpan.FromSeconds(5));
+        await UniTask.Delay(TimeSpan.FromSeconds(8));
         Instantiate(minesPrefab, transform.position, Quaternion.identity);
         canSpawn = true;
     }

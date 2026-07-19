@@ -33,7 +33,7 @@ MonoBehaviour:
   Duration: 0
   numberOfUses: 0
   isSpecial: 1
-  specialItemPrefab: {fileID: 0}
+  specialItemPrefab: {fileID: 1969843239403458197, guid: f4bc81d5b5e478e4b913285f0c9892f1, type: 3}
   isExtraBarrels: 0
   isJumpAbility: 0
   isLandMines: 1

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyAttackBehaviour : MonoBehaviour
 {
+
+    public EnemiesStatsSO enemyStats;
     public int enemyHp;
     public Rigidbody enemyRb;
 
@@ -13,6 +15,7 @@ public class EnemyAttackBehaviour : MonoBehaviour
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        enemyHp = enemyStats.health;
     }
 
     private void OnDestroy()
@@ -39,16 +42,9 @@ public class EnemyAttackBehaviour : MonoBehaviour
             // Die();
             if (collision.TryGetComponent(out PlayerHealth playerHealth))
             {
-                playerHealth.LowerHp(); // lower PLAYER hp
+                playerHealth.LowerHp(enemyStats.damage); // lower PLAYER hp
             }
-
             enemyHp--;
-            /*if (enemyHp <= 0)
-            {
-                WavesManager.Instance.OnEnemyDied(gameObject);
-                Destroy(gameObject);
-
-            }*/
         }
     }
 }

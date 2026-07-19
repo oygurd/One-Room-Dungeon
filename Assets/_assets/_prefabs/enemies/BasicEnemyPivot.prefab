@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f237f6064547b45b674b059e040f73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: cb4cc7a95678239449ecfee864dddc8d, type: 2}
   enemyHp: 1
   enemyRb: {fileID: 0}
   death: {fileID: 1764154587687140136}

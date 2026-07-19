@@ -4802,7 +4802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1798876991
 Transform:
   m_ObjectHideFlags: 0
@@ -4885,6 +4885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PowerUpPrefab:
   - {fileID: 8257065599191279221, guid: f68cbf09a0d478b4cabc9c7bb7888e64, type: 3}
+  - {fileID: 762495777393411298, guid: f07f9ab09e26a214a89d564dd788e266, type: 3}
   castPoint: 0
   canCast: 0
   sequenceDelay: 7
@@ -5376,6 +5377,10 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 5719591424205570698, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+    - target: {fileID: 6682090631108662931, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
+      propertyPath: BasicEnemySO
+      value: 
+      objectReference: {fileID: 11400000, guid: cb4cc7a95678239449ecfee864dddc8d, type: 2}
     - target: {fileID: 7054002439080702913, guid: aed29b82a0900f140998bafa15b25c6e, type: 3}
       propertyPath: m_Name
       value: Player

@@ -34,7 +34,7 @@ public class laserDamageToPlayer : MonoBehaviour
             player = laserHitPlayer.transform.gameObject;
             if (player.TryGetComponent(out PlayerHealth playergo))
             {
-                playergo.LowerHp();
+                playergo.LowerHp(1);
             }
         }
 
