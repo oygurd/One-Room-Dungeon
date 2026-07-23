@@ -16,6 +16,8 @@ public class EnemyAttackBehaviour : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         enemyHp = enemyStats.health;
+
+        enemyStats.damage = 1;
     }
 
     private void OnDestroy()

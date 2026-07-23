@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes: []
   upgradeName: Minefield
   upgradeDescription: Spawn mines at your position every few seconds
-  upgradeBackGround: {fileID: -1281361572, guid: 975607629584b9447a748b3f84582383, type: 3}
+  upgradeBackGround: {fileID: -1526373200, guid: 4f8137030b1db6642b349f62797917fd, type: 3}
   upgradeIcon: {fileID: -868189089, guid: e18267b1b2cb68644b10ca54ec32e3a2, type: 3}
   damageBonus: 0
   healthBonus: 0

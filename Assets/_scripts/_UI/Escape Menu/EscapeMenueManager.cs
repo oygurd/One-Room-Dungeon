@@ -9,6 +9,9 @@ public class EscapeMenueManager : MonoBehaviour
     bool willPause;
 
     private int changePause;
+    
+    public GameObject[] UItoDisable;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,12 +31,22 @@ public class EscapeMenueManager : MonoBehaviour
                 EscContinue(0);
                 escapeMenu.SetActive(true);
                 Cursor.visible = true;
+                
+                for (int i = 0; i < UItoDisable.Length; i++)
+                {
+                    UItoDisable[i].SetActive(false);
+                }
             }
             else
             {
                 EscContinue(1);
                 escapeMenu.SetActive(false);
                 Cursor.visible = false;
+                
+                for (int i = 0; i < UItoDisable.Length; i++)
+                {
+                    UItoDisable[i].SetActive(true);
+                }
             }
             
         }

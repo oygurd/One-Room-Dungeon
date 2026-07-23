@@ -24,7 +24,7 @@ MonoBehaviour:
   upgradeName: 4 way shield
   upgradeDescription: Get 4 shields that stay locked to you, pushing back enemies
     when hit
-  upgradeBackGround: {fileID: -1281361572, guid: 975607629584b9447a748b3f84582383, type: 3}
+  upgradeBackGround: {fileID: -1526373200, guid: 4f8137030b1db6642b349f62797917fd, type: 3}
   upgradeIcon: {fileID: -625307156, guid: a08beeffaf4954049b38a360613eeeda, type: 3}
   damageBonus: 0
   healthBonus: 0
@@ -36,3 +36,5 @@ MonoBehaviour:
   isSpecial: 1
   specialItemPrefab: {fileID: 8308904616860227466, guid: 90a33f370b291854e88b89bead56ada8, type: 3}
   isExtraBarrels: 0
+  isJumpAbility: 0
+  isLandMines: 0

@@ -113,10 +113,10 @@ TextureImporter:
       name: Menu Button Background_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 1922
-        height: 187
+        width: 1918
+        height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be39750952c9a6642ac9666a5f0fd90a
-      internalID: -913913579
+      spriteID: 6bf230ce14c658841a8f104079ddb487
+      internalID: 1795840445
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bed1ac03ebc65cc4baa6d6f07df7e6c6
+    spriteID: 12a41932b0c37374fbd0790e4c508899
     internalID: 0
     vertices: []
     indices: 
@@ -145,7 +145,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Menu Button Background_0: -913913579
+      Menu Button Background_0: 1795840445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
