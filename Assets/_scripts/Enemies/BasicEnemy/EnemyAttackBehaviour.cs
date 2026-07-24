@@ -14,10 +14,11 @@ public class EnemyAttackBehaviour : MonoBehaviour
 
     private void Start()
     {
+        enemyStats.health = 1;
+
         enemyRb = GetComponent<Rigidbody>();
         enemyHp = enemyStats.health;
 
-        enemyStats.damage = 1;
     }
 
     private void OnDestroy()

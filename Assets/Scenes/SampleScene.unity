@@ -3378,6 +3378,7 @@ MonoBehaviour:
   - {fileID: 1666791557}
   - {fileID: 1673319614}
   - {fileID: 533494583}
+  BasicEnemySO: {fileID: 11400000, guid: cb4cc7a95678239449ecfee864dddc8d, type: 2}
 --- !u!1 &1211031889
 GameObject:
   m_ObjectHideFlags: 0

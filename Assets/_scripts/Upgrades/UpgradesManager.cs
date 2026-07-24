@@ -17,6 +17,8 @@ public class UpgradesManager : SerializedMonoBehaviour
 
     public GameObject[] UItoDisable;
 
+    //enemies SO
+    public EnemiesStatsSO BasicEnemySO;
     private void Awake()
     {
         instance = this;
@@ -52,6 +54,8 @@ public class UpgradesManager : SerializedMonoBehaviour
         {
             upgradeCards[i].Setup(choices[i]);
         }
+
+        BasicEnemySO.health++;
     }
 
     List<UpgradesScriptableObject> GetRandomUpgrades(int count)

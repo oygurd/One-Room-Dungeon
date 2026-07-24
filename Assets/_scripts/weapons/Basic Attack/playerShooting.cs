@@ -22,6 +22,7 @@ public class playerShooting : MonoBehaviour
     public Transform nozzle;
 
     public PlayerAnimationsHanldler playerAnims;
+    
     private void OnEnable()
     {
         playerInputActionAsset.FindAction("Attack").Enable();
@@ -49,6 +50,7 @@ public class playerShooting : MonoBehaviour
         {
             PlayerShootingVfx.playerShootingVfxInstance.EnableShootVFX();
             playerAnims.Shoot();
+            CameraShakeManager.instance.CamShaker(0.5f, 0.2f);
             elapsedTime = 0;
             shotIntervalIndicator.fillAmount = 0;
             canShoot = false;   

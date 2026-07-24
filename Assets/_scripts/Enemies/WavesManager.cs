@@ -20,8 +20,7 @@ public class WavesManager : MonoBehaviour
     [SerializeField] public int enemiesAlive = 0;
     private bool waveInProgress = false;
     
-    //enemies SO
-    public EnemiesStatsSO BasicEnemySO;
+    
     private void Awake()
     {
         Instance = this;
@@ -40,7 +39,6 @@ public class WavesManager : MonoBehaviour
         waveInProgress = true;
         SpawnWave();
 
-        BasicEnemySO.health++;
     }
 
     public void SpawnWave()
