@@ -43,6 +43,8 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
 
     public GameObject hitObject;
 
+    public AudioSource laserBeamShoot;
+
     private void Start()
     {
         self = GetComponent<Collider>();
@@ -106,6 +108,7 @@ public class LaserGatingScannerBehaviour : SerializedMonoBehaviour
                     rayIsRed = true;
                     distanceFromAlly = laserHitAlly.distance;
                     laser.SetActive(true);
+                    laserBeamShoot.Play();
                 }
             }
         }

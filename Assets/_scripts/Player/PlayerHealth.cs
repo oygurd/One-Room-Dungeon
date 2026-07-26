@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject DeathUI;
 
+    public AudioSource damageSound;
     private void Awake()
     {
         instance = this;
@@ -42,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void LowerHp(int damageTaken)
     {
+        damageSound.Play();
         healthBarHolder.transform.DOPunchPosition(Vector3.left + Vector3.up * 10, 0.3f, 1, 1);
         //  hp = Mathf.Lerp(hp, hp -1, 0.5f);
         hp -= damageTaken;
