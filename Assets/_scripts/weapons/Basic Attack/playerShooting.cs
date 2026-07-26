@@ -50,7 +50,7 @@ public class playerShooting : MonoBehaviour
         {
             PlayerShootingVfx.playerShootingVfxInstance.EnableShootVFX();
             playerAnims.Shoot();
-            CameraShakeManager.instance.CamShaker(0.5f, 0.2f);
+            CameraShakeManager.instance.CamShaker(0.89f, 0.2f);
             elapsedTime = 0;
             shotIntervalIndicator.fillAmount = 0;
             canShoot = false;   

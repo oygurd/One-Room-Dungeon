@@ -6,7 +6,9 @@ using Sirenix.OdinInspector;
 public class PlayerMovement : SerializedMonoBehaviour
 {
     [Title("Stats")] public float MoveSpeed;
-
+    
+    public BasicPlayerStats playerStats;
+    
     private Rigidbody rb;
     private InputAction moveAction;
 
@@ -19,6 +21,8 @@ public class PlayerMovement : SerializedMonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerStats.speed = 25;//default
+        MoveSpeed = playerStats.speed;
         rb = GetComponent<Rigidbody>();
         moveAction = InputSystem.actions.FindAction("walking");
     }
