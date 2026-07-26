@@ -12,6 +12,8 @@ public class mortarAbility : MonoBehaviour
 
     public MeshRenderer meshRenderer;
 
+    public AudioSource explosionSound;
+
     public AbilityStatsSO abilityStats;
 
     public LayerMask terrainLayer;
@@ -44,6 +46,7 @@ public class mortarAbility : MonoBehaviour
 
                 meshRenderer.enabled = false;
 
+                explosionSound.Play();
 
                 Destroy(gameObject, 5);
             }

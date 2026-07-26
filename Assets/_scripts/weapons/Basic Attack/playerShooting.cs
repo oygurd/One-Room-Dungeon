@@ -18,6 +18,8 @@ public class playerShooting : MonoBehaviour
     public TankProjectilesManager tankProjectilesManager;
     float shotingInterval;
 
+    public AudioSource shootingSound;
+    
     public Transform body;
     public Transform nozzle;
 
@@ -48,6 +50,7 @@ public class playerShooting : MonoBehaviour
     {
         if (shootingAttack.WasPressedThisFrame() && canShoot)
         {
+            shootingSound.Play();
             PlayerShootingVfx.playerShootingVfxInstance.EnableShootVFX();
             playerAnims.Shoot();
             CameraShakeManager.instance.CamShaker(0.89f, 0.2f);
